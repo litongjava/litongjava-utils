@@ -1,0 +1,32 @@
+java开发常用工具类和实体类
+##使用步骤
+step1:下载工程到eclipse中  
+step2:生成jar包到本地库  
+```
+clean install -DskipTests
+```  
+step3:在其他工程添加依赖
+```
+<dependency>
+  <groupId>com.litong</groupId>
+  <artifactId>litongjava-utils</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+默认使用的sfl4j+logback,可以排除logback
+```
+<dependency>
+  <groupId>com.litong</groupId>
+  <artifactId>litongjava-utils</artifactId>
+  <version>1.0.0</version>
+  <exclusions>
+    <exclusion>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency>
+```
+
+step4:使用工具类
+工具类都在com.litong.utils下,使用也和简单,那个工具列不会用可提issue,我会解答
