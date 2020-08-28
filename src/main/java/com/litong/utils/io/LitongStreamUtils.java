@@ -10,7 +10,7 @@ import java.io.OutputStream;
  * @version 1.0 
  * @desc
  */
-public class StreamUtil {
+public class LitongStreamUtils {
 
   public static final int BUFFER_SIZE = 4096;
 

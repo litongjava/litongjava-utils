@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.litong.utils.io.IOUtils;
+import com.litong.utils.io.LitongIOUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -56,8 +56,8 @@ public class HttpDownloadUtil {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      IOUtils.closeQuietly(bufferedOutputStream);
-      IOUtils.closeQuietly(bufferedInputStream);
+      LitongIOUtils.closeQuietly(bufferedOutputStream);
+      LitongIOUtils.closeQuietly(bufferedInputStream);
     }
     log.info("结束下载:" + System.currentTimeMillis());
     return localFilePath;

@@ -11,7 +11,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import com.litong.utils.io.IOUtils;
+import com.litong.utils.io.LitongIOUtils;
 
 /**
  * @author litongjava
@@ -63,7 +63,7 @@ public class MailUtil {
     } catch (MessagingException e) {
       e.printStackTrace();
     } finally {
-      IOUtils.closeQuietly(ts);
+      LitongIOUtils.closeQuietly(ts);
     }
 
   }

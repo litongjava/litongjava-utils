@@ -19,7 +19,7 @@ import org.apache.commons.httpclient.params.HttpClientParams;
 import org.apache.commons.httpclient.params.HttpMethodParams;
 
 import com.alibaba.fastjson.JSON;
-import com.litong.utils.string.StringUtil;
+import com.litong.utils.string.LitongStringUtils;
 
 /**
  * Created by litong on 2019/1/3 0003.
@@ -119,7 +119,7 @@ public class HttpClientUtil {
     }
     if (data != null) {
       for (Map.Entry<String, String> e : data.entrySet()) {
-        if (!StringUtil.isEmpty(e.getValue())) {
+        if (!LitongStringUtils.isEmpty(e.getValue())) {
           postMethod.setParameter(e.getKey(), e.getValue());
         }
       }
