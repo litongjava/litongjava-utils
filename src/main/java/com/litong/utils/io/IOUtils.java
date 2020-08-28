@@ -13,7 +13,7 @@ import javax.mail.Transport;
  * @version 1.0
  * @desc
  */
-public class LitongIOUtils {
+public class IOUtils {
   public static StringBuffer toStringBuffer(InputStream in) {
     StringBuffer sb = new StringBuffer();
     byte[] b = new byte[1024 * 8];

@@ -1,12 +1,12 @@
 package com.litong.utils.reflection;
-import com.litong.utils.string.LitongStringUtils;
+import com.litong.utils.string.StringUtils;
 
 public class CamelUnderlineUtil {
 
   private static final char UNDERLINE = '_';
 
   public static String camelToUnderline(String param) {
-    if (LitongStringUtils.isEmpty(param)) {
+    if (StringUtils.isEmpty(param)) {
       return "";
     }
     StringBuilder sb = new StringBuilder();
@@ -24,7 +24,7 @@ public class CamelUnderlineUtil {
   }
 
   public static String underlineToCamel(String param) {
-    if (LitongStringUtils.isEmpty(param)) {
+    if (StringUtils.isEmpty(param)) {
       return "";
     }
     StringBuilder sb = new StringBuilder();

@@ -14,7 +14,7 @@ import javax.servlet.ServletInputStream;
  * @version 1.0
  * @desc
  */
-public class LitongHttpClientUtils {
+public class HttpClientUtils {
   public static String get(String requestUrl, Map<String, String> data) throws MalformedURLException {
     return HttpURLConnectionUtils.get(requestUrl, data);
   }

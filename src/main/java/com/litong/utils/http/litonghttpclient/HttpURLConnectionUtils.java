@@ -11,8 +11,8 @@ import java.net.URLEncoder;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.litong.utils.io.LitongIOUtils;
-import com.litong.utils.io.LitongStreamUtils;
+import com.litong.utils.io.IOUtils;
+import com.litong.utils.io.StreamUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -104,7 +104,7 @@ public class HttpURLConnectionUtils {
       if (httpConnection.getResponseCode() != 200) {
         throw new RuntimeException("HTTP GET Request Failed with Error code : " + httpConnection.getResponseCode());
       }
-      sb = LitongIOUtils.toStringBuffer(httpConnection.getInputStream());
+      sb = IOUtils.toStringBuffer(httpConnection.getInputStream());
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -136,7 +136,7 @@ public class HttpURLConnectionUtils {
       dos.close();
       // 读取响应
       if (httpConn.getResponseCode() == HttpURLConnection.HTTP_OK) {
-        sb = LitongIOUtils.toStringBuffer(httpConn.getInputStream());
+        sb = IOUtils.toStringBuffer(httpConn.getInputStream());
       } else {
         throw new RuntimeException("HTTP POST Request Failed with Error code : " + httpConn.getResponseCode() + "," + url);
       }
@@ -217,12 +217,12 @@ public class HttpURLConnectionUtils {
     DataOutputStream dos = null;
     try {
       dos = new DataOutputStream(connection.getOutputStream());
-      LitongStreamUtils.copy(reqInputStream, dos);
+      StreamUtils.copy(reqInputStream, dos);
       dos.flush();
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      LitongIOUtils.closeQuietly(dos);
+      IOUtils.closeQuietly(dos);
     }
   }
 

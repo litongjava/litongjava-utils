@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.litong.utils.string.LitongStringUtils;
+import com.litong.utils.string.StringUtils;
 
 /**
  * Created by litong on 2018/9/26 0026. maven 工具类
@@ -36,16 +36,16 @@ public class MavenUtil {
     // File repodirFile = new File(repodir);
     String jarPath = jarFile.getAbsolutePath();
     // String repodirPath = repodirFile.getAbsolutePath();
-    String all = LitongStringUtils.removePrefix(jarPath, repodir); // all =
+    String all = StringUtils.removePrefix(jarPath, repodir); // all =
                                                             // com\oracle\ojdbc14\10.2.0.4.0\ojdbc14-10.2.0.4.0.jar
-    String[] splits = LitongStringUtils.splitPath(all);
+    String[] splits = StringUtils.splitPath(all);
     String jarNmae = splits[splits.length - 1];
     // 获取 version and artifactid
     String version = getVersion(jarNmae);
     String artifactid = getArtifactid(jarNmae);
     // remote com.ojdbc14\10.2.0.4.0\ojdbc14-10.2.0.4.0.jar
     System.out.println(all);
-    all = LitongStringUtils.removeSuffix(all, "\\" + artifactid + "\\" + version + "\\" + jarNmae); // ==> all = com\ojdbc14
+    all = StringUtils.removeSuffix(all, "\\" + artifactid + "\\" + version + "\\" + jarNmae); // ==> all = com\ojdbc14
     String groupid = all.replace("\\", ".");// ==> all= com.ojdbc4
     System.out.println(all);
     // 构造返回值返回
@@ -77,7 +77,7 @@ public class MavenUtil {
    */
   public static String getVersion(String jar) {
     String[] strings = jar.split("-");
-    String version = LitongStringUtils.removeSuffix(strings[1], ".jar");
+    String version = StringUtils.removeSuffix(strings[1], ".jar");
     return version;
   }
 

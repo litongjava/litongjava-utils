@@ -6,7 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.litong.utils.digest.SHA1Util;
 import com.litong.utils.http.FileUploadUtil;
 import com.litong.utils.http.commonshttpclient.HttpClientUtil;
-import com.litong.utils.io.LitongIOUtils;
+import com.litong.utils.io.IOUtils;
 import com.litong.utils.url.URLUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
@@ -137,7 +137,7 @@ public class KodUtil {
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } finally {
-      LitongIOUtils.closeQuietly(fis);
+      IOUtils.closeQuietly(fis);
     }
     return null;
   }

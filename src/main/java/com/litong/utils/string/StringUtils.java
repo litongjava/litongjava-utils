@@ -7,7 +7,7 @@ import java.io.File;
  * @date 2018年9月26日_下午6:40:39
  * @version 1.0
  */
-public class LitongStringUtils {
+public class StringUtils {
   public static boolean equals(String source, String dest) {
     if (source == null) {
       return false;

@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.litong.utils.string.LitongStringUtils;
+import com.litong.utils.string.StringUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -95,7 +95,7 @@ public class LReflectionUtils {
 
       String dstName = CamelUnderlineUtil.camelToUnderline(field.getName());
       Object dstObject = invokeGetMethod(obj, field.getName());
-      if (LitongStringUtils.isEmpty(dstObject)) {
+      if (StringUtils.isEmpty(dstObject)) {
         continue;
       } else if (dstObject instanceof Date) {
         dstObject = (Date) dstObject;

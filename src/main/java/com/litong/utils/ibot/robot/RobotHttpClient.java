@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
 import com.litong.utils.http.commonshttpclient.HttpClientUtil;
-import com.litong.utils.string.LitongStringUtils;
+import com.litong.utils.string.StringUtils;
 import com.litong.utils.url.URLUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +40,7 @@ public class RobotHttpClient {
     if (format != null && format.equalsIgnoreCase("json")) {
       AskResponse ap = JSON.parseObject(httpResponse, AskResponse.class);
       // 添加userId和sessionId
-      if (LitongStringUtils.isEmpty(ap.getProps())) {
+      if (StringUtils.isEmpty(ap.getProps())) {
         AskResponse.PropsBean props = new AskResponse.PropsBean();
         props.setUserId(data.getUserId());
         props.setSessionId(data.getSessionId());
@@ -60,7 +60,7 @@ public class RobotHttpClient {
   }
 
   public static List<String> getHotQuestion(String robotURL, HotRequest data) {
-    if (LitongStringUtils.isEmpty(data.getFormat())) {
+    if (StringUtils.isEmpty(data.getFormat())) {
       data.setFormat("json");
     }
     String url = URLUtil.append(robotURL, "p4pages/hot-question.action").toString();

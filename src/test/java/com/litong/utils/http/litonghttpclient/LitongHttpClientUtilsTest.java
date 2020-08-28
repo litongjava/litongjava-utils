@@ -41,8 +41,8 @@ public class LitongHttpClientUtilsTest {
     
     headers.put("accept",
         "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
-    HttpURLConnection connection = LitongHttpClientUtils.executeGet(targetUrl, method, headers, null);
-    LitongHttpClientUtils.disconnect(connection);
+    HttpURLConnection connection = HttpClientUtils.executeGet(targetUrl, method, headers, null);
+    HttpClientUtils.disconnect(connection);
     Map<String, List<String>> headerFields = connection.getHeaderFields();
     for (Map.Entry<String, List<String>> e : headerFields.entrySet()) {
       System.out.println(e.getKey());
