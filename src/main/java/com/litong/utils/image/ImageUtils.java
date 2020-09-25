@@ -1,4 +1,4 @@
-package com.litong.utils.img;
+package com.litong.utils.image;
 
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
@@ -15,7 +15,7 @@ import javax.imageio.stream.MemoryCacheImageInputStream;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
-public class ImageUtil {
+public class ImageUtils {
 
   public static byte[] reduce(byte[] bytes) {
     MemoryCacheImageInputStream inputStream = new MemoryCacheImageInputStream(new ByteArrayInputStream(bytes));
@@ -47,6 +47,11 @@ public class ImageUtil {
     return retval;
   }
 
+  /**
+   * 获取图片流对应的图片编码格式
+   * @param content
+   * @return
+   */
   public static String getImageFormatByBytes(byte[] content) {
     ImageInputStream input = null;
     try {

@@ -10,7 +10,7 @@ import java.util.List;
  * @desc
  */
 
-public class LArrays {
+public class ListUtils {
   public static List<String> toList(String[] ids) {
     List<String> idList = new ArrayList<>(ids.length);
     for (String i : ids) {
@@ -25,5 +25,14 @@ public class LArrays {
       idList.add(i);
     }
     return idList;
+  }
+
+  public static String[] toArrayString(List<String> list) {
+    int size = list.size();
+    String[] array = new String[size];
+    for (int i = 0; i < size; i++) {
+      array[i] = list.get(i);
+    }
+    return array;
   }
 }

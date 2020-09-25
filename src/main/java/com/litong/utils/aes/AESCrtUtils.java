@@ -81,17 +81,14 @@ public class AESCrtUtils {
    * @param iv     偏移量
    * @param key    秘钥文件
    */
-  public static String decrypt(String encode, byte[] keyBytes, byte[] ivBytes) {
-    String decoded = "";
-    byte[] bytes = HexUtils.toBytes(encode);
+  public static byte[] decrypt(byte[] encodeBytes, byte[] keyBytes, byte[] ivBytes) {
     try {
       IvParameterSpec ivSpec = new IvParameterSpec(ivBytes);
       Key keys = new SecretKeySpec(keyBytes, "AES");
       Cipher cipher = Cipher.getInstance("AES/CTR/PKCS5Padding");
       cipher.init(Cipher.DECRYPT_MODE, keys, ivSpec);
-      byte[] ret = cipher.doFinal(bytes);
-      decoded = new String(ret);
-      return decoded.trim();
+      byte[] ret = cipher.doFinal(encodeBytes);
+      return ret;
     } catch (NoSuchAlgorithmException e) {
       e.printStackTrace();
     } catch (InvalidKeyException e) {
@@ -105,6 +102,18 @@ public class AESCrtUtils {
     } catch (BadPaddingException e) {
       e.printStackTrace();
     }
-    return decoded;
+    return null;
+  }
+  /**
+   * 解密
+   * @param encode
+   * @param key
+   * @return
+   */
+  public static String decrypt(String encode, String key) {
+    byte[] encodeBytes = HexUtils.toBytes(encode);
+    byte[] keyBytes = HexUtils.toBytes(key);
+    byte[] decrypt = decrypt(encodeBytes, keyBytes, getDefaultIvBytes());
+    return new String(decrypt);
   }
 }

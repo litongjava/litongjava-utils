@@ -25,13 +25,6 @@ public class AESCrtUtilsTest {
   }
 
   @Test
-  public void descrpt() {
-    byte[] keyBytes = HexUtils.toBytes(key);
-    String decrypt = AESCrtUtils.decrypt(cipherText, keyBytes, AESCrtUtils.getDefaultIvBytes());
-    System.out.println(decrypt);
-  }
-
-  @Test
   public void getRandomKey() {
     String randomKey = AESCrtUtils.getRandomKey();
     System.out.println(randomKey);

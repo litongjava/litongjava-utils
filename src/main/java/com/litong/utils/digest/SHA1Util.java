@@ -80,9 +80,9 @@ public class SHA1Util {
   }
 
   /**
-   * 获取字符串的sha1值
+   * 加密
    */
-  public static String getSha1Code(String content) {
+  public static String encode(String content) {
     instance.update(content.getBytes());
     byte[] digest = instance.digest();
     BigInteger bigInteger = new BigInteger(1, digest);

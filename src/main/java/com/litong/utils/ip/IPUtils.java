@@ -6,7 +6,7 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
 
-public class IPUtil {
+public class IPUtils {
   /**
    * 获取本机局域网IP地址
    */

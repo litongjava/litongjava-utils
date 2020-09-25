@@ -1,5 +1,7 @@
 package com.litong.utils.io;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -22,8 +24,18 @@ public class StreamUtils {
       out.write(buffer, 0, bytesRead);
       byteCount += bytesRead;
     }
-    out.flush();
     return byteCount;
   }
 
+  public static void copy(File file, OutputStream outputStream) {
+    FileInputStream fileInputStream=null;
+    try {
+      fileInputStream = new FileInputStream(file);
+      copy(fileInputStream, outputStream);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }finally {
+      IOUtils.closeQuietly(fileInputStream);
+    }
+  }
 }
