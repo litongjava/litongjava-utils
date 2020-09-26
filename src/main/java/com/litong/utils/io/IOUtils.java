@@ -50,4 +50,14 @@ public class IOUtils {
       }
     }
   }
+
+  public static void closeQuietly(AutoCloseable io) {
+    if (io != null) {
+      try {
+        io.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
 }
