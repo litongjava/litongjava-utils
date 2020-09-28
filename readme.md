@@ -27,6 +27,24 @@ step3:在其他工程添加依赖
   </exclusions>
 </dependency>
 ```
+jave-all-deps 非常大,如果不需要也可以排除
+```
+<dependency>
+  <groupId>com.litong</groupId>
+  <artifactId>litongjava-utils</artifactId>
+  <version>1.0.0</version>
+  <exclusions>
+    <exclusion>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>ws.schild</groupId>
+      <artifactId>jave-all-deps</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency>
+```
 
 step4:使用工具类  
 工具类都在com.litong.utils下,使用也和简单,那个工具列不会用可提issue,我会解答

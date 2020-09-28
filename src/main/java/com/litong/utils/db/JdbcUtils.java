@@ -76,4 +76,48 @@ public class JdbcUtils {
     }
 
   }
+
+  /**
+   * 获取数据库的类型
+   * mysql jdbc:mysql://localhost/monitoring_db
+   * oracle jdbc:oracle:thin:@192.168.28.220:1521/orcl
+   * @param jdbcUrl
+   * @return
+   */
+  public static String getJdbcType(String jdbcUrl) {
+    if (jdbcUrl.startsWith("jdbc:mysql:")) {
+      return DbTypeConstants.mysql;
+    } else if (jdbcUrl.startsWith("jdbc:oracle")) {
+      return DbTypeConstants.oracle;
+    }
+    return null;
+  }
+
+  /**
+   * 获取驱动类名
+   * @param jdbcType
+   * @return
+   */
+  public static String getDriverClass(String jdbcType) {
+    if(DbTypeConstants.mysql.contains(jdbcType)) {
+      return DbTypeConstants.mysqlDriverClass;
+    }else if(DbTypeConstants.oracle.contains(jdbcType)) {
+      return DbTypeConstants.oracleDriverClass;
+    }
+    return null;
+  }
+
+  /**
+   * 返回验证sql
+   * @param jdbcType
+   * @return
+   */
+  public static String getValidateSql(String jdbcType) {
+    if(DbTypeConstants.mysql.contains(jdbcType)) {
+      return DbTypeConstants.mysqlValidateSql;
+    }else if(DbTypeConstants.oracle.contains(jdbcType)) {
+      return DbTypeConstants.oracleValidateSql;
+    }
+    return null;
+  }
 }
