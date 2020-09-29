@@ -28,7 +28,7 @@ public class StringUtils {
   }
 
   public static boolean notBlank(String value) {
-    if(isEmpty(value)) {
+    if (isEmpty(value)) {
       return false;
     }
     return true;
@@ -86,5 +86,17 @@ public class StringUtils {
       }
     }
     return true;
+  }
+
+  /**
+   * 如果为空,返回 0
+   * @param employeeDepartmentId
+   * @return
+   */
+  public static String nullTo0(String employeeDepartmentId) {
+    if (StringUtils.isEmpty(employeeDepartmentId)) {
+      return "0";
+    }
+    return null;
   }
 }
