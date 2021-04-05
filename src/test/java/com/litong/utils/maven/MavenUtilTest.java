@@ -21,7 +21,7 @@ public class MavenUtilTest {
    */
   @Test
   public void deleteBadJarInMavenLoacalRepository() {
-    MavenUtil mavenUtil = new MavenUtil();
+    MavenUtils mavenUtil = new MavenUtils();
     String dirname = "D:\\dev_mavenRepository";
     mavenUtil.deleteBadJarInMavenLoacalRepository(dirname);
   }
@@ -35,7 +35,7 @@ public class MavenUtilTest {
     String mvnPath="mvn";
     String jarPath = "D:\\dev_workspace\\java\\hg_project\\ibot-parent\\ibot-robot-9.0-20190820-alpha\\lib";
     String localMavenPath = "D:\\dev_mavenRepository";
-    String install = MavenUtil.install(mvnPath,jarPath, localMavenPath);
+    String install = MavenUtils.install(mvnPath,jarPath, localMavenPath);
     System.out.println(install);
   }
 

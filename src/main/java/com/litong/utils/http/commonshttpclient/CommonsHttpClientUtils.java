@@ -26,7 +26,7 @@ import com.litong.utils.string.StringUtils;
  * 
  * @See 02.commons-httpclient.docx 基于commons-httpclient封装的工类
  */
-public class HttpClientUtil {
+public class CommonsHttpClientUtils {
   private static HttpClient httpClient;
   static {
     httpClient = new HttpClient(new MultiThreadedHttpConnectionManager());

@@ -15,26 +15,28 @@ import javax.servlet.ServletInputStream;
  * @desc
  */
 public class HttpClientUtils {
-  public static String get(String requestUrl, Map<String, String> data) throws MalformedURLException {
-    return HttpURLConnectionUtils.get(requestUrl, data);
+  public static String get(String targetUrl, Map<String,Object> data){
+    return HttpURLConnectionUtils.get(targetUrl, data);
   }
 
-  public static String post(String requestUrl, Map<String, String> data) throws MalformedURLException {
-    return HttpURLConnectionUtils.post(requestUrl, data);
+  public static String post(String targetUrl, Map<String, Object> data) throws MalformedURLException {
+    return HttpURLConnectionUtils.post(targetUrl, data);
   }
 
-  public static HttpURLConnection execute(String targetUrl, String method, Map<String, String> headers,
-      Map<String, String> reqParam) throws MalformedURLException {
+  public static String post(String targetUrl, Map<String, String> headers, Map<String, Object> params) {
+    return HttpURLConnectionUtils.post(targetUrl, headers, params);
+  }
+
+  public static HttpURLConnection execute(String targetUrl, String method, Map<String, String> headers, Map<String, Object> reqParam)
+      throws MalformedURLException {
     return HttpURLConnectionUtils.execute(targetUrl, method, headers, reqParam);
   }
 
-  public static HttpURLConnection executeValues(String targetUrl, String method, Map<String, String> headers,
-      Map<String, String[]> reqMap) {
+  public static HttpURLConnection executeValues(String targetUrl, String method, Map<String, String> headers, Map<String, String[]> reqMap) {
     return HttpURLConnectionUtils.executeValues(targetUrl, method, headers, reqMap);
   }
 
-  public static HttpURLConnection execute(String targetUrl, String method, Map<String, String> headers,
-      ServletInputStream reqInputStream) {
+  public static HttpURLConnection execute(String targetUrl, String method, Map<String, String> headers, ServletInputStream reqInputStream) {
     return HttpURLConnectionUtils.execute(targetUrl, method, headers, reqInputStream);
   }
 
@@ -42,9 +44,16 @@ public class HttpClientUtils {
     HttpURLConnectionUtils.disconnect(httpURLConnection);
   }
 
+  public static HttpURLConnection executeGet(String targetUrl, String method, Map<String, String> headers, Map<String, Object> requestParams) {
+    return HttpURLConnectionUtils.executeGet(targetUrl, method, headers, requestParams);
+  }
 
-  public static HttpURLConnection executeGet(String targetUrl, String method, Map<String, String> headers, Map<String,String> requestParams) {
-    return HttpURLConnectionUtils.executeGet(targetUrl,method,headers,requestParams);
+  public static StringBuffer buildHttpQueryParams(Map<String, Object> params) {
+    return HttpURLConnectionUtils.buildHttpQueryParams(params);
+  }
+
+  public static HttpResponse get(String targetUrl, Map<String, String> header, Map<String, Object> body) {
+    return HttpURLConnectionUtils.get(targetUrl,header,body);
   }
 
 }

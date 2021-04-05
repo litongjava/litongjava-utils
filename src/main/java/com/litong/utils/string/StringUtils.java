@@ -22,10 +22,18 @@ public class StringUtils {
     }
     return false;
   }
+  
+  public static boolean isBlank(String value) {
+    if (value == null || value.length() == 0) {
+      return true;
+    }
+    return false;
+  }
 
   public static boolean isEmpty(Object value) {
     return value == null;
   }
+  
 
   public static boolean notBlank(String value) {
     if (isEmpty(value)) {
@@ -99,4 +107,6 @@ public class StringUtils {
     }
     return null;
   }
+
+  
 }

@@ -81,7 +81,7 @@ public class MavenInstall {
     // @see org.apache.maven.plugin.install.InstallFileMojo
     StringBuffer strBuf = new StringBuffer();
     strBuf.append(mvmpath + " install:install-file");
-    strBuf.append(" -DgroupId=" + dependency.getGruopId());
+    strBuf.append(" -DgroupId=" + dependency.getGroupId());
     strBuf.append(" -DartifactId=" + dependency.getArtifactId());
     strBuf.append(" -Dversion=" + dependency.getVersion());
     strBuf.append(" -Dfile=" + dependency.getJarPath());
@@ -128,7 +128,7 @@ public class MavenInstall {
       if (groupId == null) {
         groupId = nodeList.item(0).getTextContent();
       }
-      dependency.setGruopId(groupId);
+      dependency.setGroupId(groupId);
 
       nodeList = rootEle.getElementsByTagName("artifactId");
       for (int i = 0; i < nodeList.getLength(); i++) {
@@ -236,7 +236,7 @@ public class MavenInstall {
   private static String dependencyToXML(Dependency dependency) {
     StringBuffer strBuf = new StringBuffer();
     strBuf.append("<dependency>");
-    strBuf.append("<groupId>" + dependency.getGruopId() + "</groupId>");
+    strBuf.append("<groupId>" + dependency.getGroupId() + "</groupId>");
     strBuf.append("<artifactId>" + dependency.getArtifactId() + "</artifactId>");
     strBuf.append("<version>" + dependency.getVersion() + "</version>");
     strBuf.append("</dependency>");

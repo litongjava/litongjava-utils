@@ -4,9 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.alibaba.fastjson.JSON;
-import com.litong.utils.http.commonshttpclient.HttpClientUtil;
+import com.litong.utils.http.litonghttpclient.HttpClientUtils;
 import com.litong.utils.string.StringUtils;
 import com.litong.utils.url.URLUtil;
 
@@ -26,7 +25,7 @@ public class RobotHttpClient {
    */
   public static AskResponse ask(String robotURL, AskRequest data) {
     StringBuffer append = URLUtil.append(robotURL, "ask.action");
-    Map<String, String> params = new HashMap<String, String>();
+    Map<String, Object> params = new HashMap<>();
     params.put("userId", data.getUserId());
     params.put("question", data.getQuestion());
     params.put("sessionId", data.getSessionId());
@@ -53,9 +52,9 @@ public class RobotHttpClient {
     return ap;
   }
 
-  public static String ask(String url, Map<String, String> params) {
+  public static String ask(String url, Map<String, Object> params) {
     log.info("url:" + url + "," + "params:" + params);
-    String httpResponse = HttpClientUtil.post(url, null, params);
+    String httpResponse = HttpClientUtils.post(url, null, params);
     return httpResponse;
   }
 
@@ -64,13 +63,13 @@ public class RobotHttpClient {
       data.setFormat("json");
     }
     String url = URLUtil.append(robotURL, "p4pages/hot-question.action").toString();
-    Map<String, String> params = new HashMap<>();
+    Map<String, Object> params = new HashMap<>();
     params.put("platform", data.getPlatform());
     params.put("brand", data.getBrand());
     params.put("maxReturn", data.getMaxReturn() + "");
     params.put("type", data.getType() + "");
     params.put("format", data.getFormat());
-    String httpResponse = HttpClientUtil.post(url.toString(), null, params);
+    String httpResponse = HttpClientUtils.post(url.toString(), null, params);
     List<String> retval = JSON.parseArray(httpResponse, String.class);
     return retval;
   }

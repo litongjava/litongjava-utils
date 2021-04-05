@@ -20,7 +20,7 @@ public class IOUtils {
     int length = -1;
     try {
       while ((length = in.read(b)) != -1) {
-        sb.append(new String(b, 0, length));
+        sb.append(new String(b, 0, length,"UTF-8"));
       }
       return sb;
     } catch (IOException e) {

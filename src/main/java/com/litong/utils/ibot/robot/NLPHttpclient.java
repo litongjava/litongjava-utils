@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
-import com.litong.utils.http.commonshttpclient.HttpClientUtil;
+import com.litong.utils.http.litonghttpclient.HttpClientUtils;
 import com.litong.utils.ibot.robot.AskResponse.PropsBean;
 
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 public class NLPHttpclient {
   public static AskResponse ask(String nlpURL, AskRequest aq, String askEx) {
     AskResponse retval = new AskResponse();
-    Map<String, String> params = new HashMap<String, String>();
+    Map<String, Object> params = new HashMap<>();
     // params.put("ver", "-1");
     params.put("userId", aq.getUserId());
     params.put("question", aq.getQuestion());
@@ -31,7 +31,7 @@ public class NLPHttpclient {
     params.put("user_ask_ex", askEx);
     // params.put("from3rd", "true");
     log.info(nlpURL + "," + params);
-    String httpResponse = HttpClientUtil.post(nlpURL, null, params);
+    String httpResponse = HttpClientUtils.post(nlpURL, null, params);
     String format = aq.getFormat();
     if (format != null && format.equalsIgnoreCase("json")) {
       NLPResponse nr = JSON.parseObject(httpResponse, NLPResponse.class);
