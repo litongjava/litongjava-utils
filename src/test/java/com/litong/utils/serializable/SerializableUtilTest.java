@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import org.junit.Test;
 
+import com.litongjava.utils.serializable.SerializableUtil;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

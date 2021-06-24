@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import com.litongjava.utils.table.TableUtils;
+
 import lombok.Data;
 
 /**

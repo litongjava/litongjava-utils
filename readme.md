@@ -1,14 +1,13 @@
+# litongjava-utils
+
 java开发常用工具类和实体类  
-##使用步骤
-step1:下载工程到eclipse中  
-step2:生成jar包到本地库  
-```
-clean install -DskipTests
-```  
+
+## 使用步骤
+
 step3:在其他工程添加依赖
 ```
 <dependency>
-  <groupId>com.litong</groupId>
+  <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
   <version>1.0.0</version>
 </dependency>
@@ -16,7 +15,7 @@ step3:在其他工程添加依赖
 默认使用的sfl4j+logback,可以排除logback
 ```
 <dependency>
-  <groupId>com.litong</groupId>
+  <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
   <version>1.0.0</version>
   <exclusions>
@@ -30,7 +29,7 @@ step3:在其他工程添加依赖
 jave-all-deps 非常大,如果不需要也可以排除
 ```
 <dependency>
-  <groupId>com.litong</groupId>
+  <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
   <version>1.0.0</version>
   <exclusions>
@@ -47,4 +46,4 @@ jave-all-deps 非常大,如果不需要也可以排除
 ```
 
 step4:使用工具类  
-工具类都在com.litong.utils下,使用也和简单,那个工具列不会用可提issue,我会解答
+工具类都在com.litongjava.utils下,使用也和简单,那个工具列不会用可提issue,我会解答

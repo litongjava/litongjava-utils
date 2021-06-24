@@ -2,7 +2,8 @@ package com.litong.utils.aes;
 
 import org.junit.Test;
 
-import com.litong.utils.integer.HexUtils;
+import com.litongjava.utils.aes.AESCrtUtils;
+import com.litongjava.utils.integer.HexUtils;
 
 /**
  * @author bill robot

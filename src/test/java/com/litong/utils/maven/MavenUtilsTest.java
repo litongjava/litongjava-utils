@@ -2,6 +2,8 @@ package com.litong.utils.maven;
 
 import org.junit.Test;
 
+import com.litongjava.utils.maven.MavenUtils;
+
 /**
  * @author litong
  * @date 2021年3月7日_下午3:58:00 

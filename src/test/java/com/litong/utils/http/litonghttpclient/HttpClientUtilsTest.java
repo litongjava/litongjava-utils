@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import com.litongjava.utils.http.litonghttpclient.HttpClientUtils;
+
 /**
  * @author create by ping-e-lee on 2021年3月19日 下午4:08:55 
  * @version 1.0 

@@ -5,7 +5,7 @@ import java.net.URL;
 
 import org.junit.Test;
 
-import com.litong.utils.serializable.SerializableUtil;
+import com.litongjava.utils.serializable.SerializableUtil;
 
 /**
  * @author litong

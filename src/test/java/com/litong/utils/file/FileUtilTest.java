@@ -4,6 +4,8 @@ import java.io.File;
 
 import org.junit.Test;
 
+import com.litongjava.utils.file.FileUtil;
+
 /**
  * @author litong
  * @date 2018年9月26日_下午4:15:15 

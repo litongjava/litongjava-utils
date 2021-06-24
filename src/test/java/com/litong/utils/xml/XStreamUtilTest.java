@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.litongjava.utils.xml.XStreamUtil;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.io.xml.DomDriver;

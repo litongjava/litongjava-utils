@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
+import com.litongjava.utils.pinyin.PinyinUtil;
+
 import net.sourceforge.pinyin4j.PinyinHelper;
 
 /**

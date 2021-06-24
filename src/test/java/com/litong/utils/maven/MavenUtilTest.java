@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.litongjava.utils.maven.MavenUtils;
+
 /**
  * @author Administrator
  * @date 2019年1月5日_上午9:20:09

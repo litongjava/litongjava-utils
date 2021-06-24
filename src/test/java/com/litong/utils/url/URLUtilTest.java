@@ -10,6 +10,8 @@ import java.net.URL;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
+import com.litongjava.utils.url.URLUtil;
+
 /**
  * @author litong
  * @date 2018年12月7日_下午5:15:02 

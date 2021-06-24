@@ -2,6 +2,8 @@ package com.litong.utils.des;
 
 import org.junit.Test;
 
+import com.litongjava.utils.des.DesedeUtils;
+
 /**
  * @author create by ping-e-lee on 2021年3月16日 下午4:13:32 
  * @version 1.0 
