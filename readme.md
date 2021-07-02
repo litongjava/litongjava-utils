@@ -4,7 +4,7 @@ java开发常用工具类和实体类
 
 ## 使用步骤
 
-step3:在其他工程添加依赖
+添加依赖
 ```
 <dependency>
   <groupId>com.litongjava</groupId>

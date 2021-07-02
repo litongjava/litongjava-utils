@@ -11,12 +11,15 @@ import java.security.NoSuchAlgorithmException;
 
 import org.apache.commons.io.IOUtils;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author litong
  * @date 2019年2月13日_下午4:08:29
  * @version 1.0
  */
-public class SHA1Util {
+@Slf4j
+public class SHA1Utils {
 
   private static MessageDigest instance = null;
 
@@ -35,7 +38,7 @@ public class SHA1Util {
     File file = new File(localFilePath);
     if (!file.exists()) {
       // log.info("file not found:"+localFilePath);
-      System.out.println("file not found:" + localFilePath);
+      log.error("file not found:" + localFilePath);
       return null;
     } else {
       String sha1 = getSha1(file);

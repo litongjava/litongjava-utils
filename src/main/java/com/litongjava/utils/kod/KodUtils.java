@@ -13,7 +13,7 @@ import org.apache.commons.io.FilenameUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.litongjava.utils.digest.SHA1Util;
+import com.litongjava.utils.digest.SHA1Utils;
 import com.litongjava.utils.http.FileUploadUtil;
 import com.litongjava.utils.http.litonghttpclient.HttpClientUtils;
 import com.litongjava.utils.io.IOUtils;
@@ -210,7 +210,7 @@ public class KodUtils {
   public static String uploadAndShare(String serverURL, String username, String apiLoginTonken, String uploadTo,
                                       File localFile) {
     // 查询本地缓存,如果查询到则返回
-    String sha1 = SHA1Util.getSha1(localFile);
+    String sha1 = SHA1Utils.getSha1(localFile);
     SidCache sidCache = sidCacheMap.get(sha1);
     if (sidCache != null) {
       // 以获取到可道云上的分享链接,判断可道云的文件是否存在,如果不存在则重新上传

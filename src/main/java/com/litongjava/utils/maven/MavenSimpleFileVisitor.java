@@ -9,7 +9,7 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 
-import com.litongjava.utils.digest.SHA1Util;
+import com.litongjava.utils.digest.SHA1Utils;
 
 public class MavenSimpleFileVisitor extends SimpleFileVisitor<Path> {
   // 遍历文件
@@ -39,7 +39,7 @@ public class MavenSimpleFileVisitor extends SimpleFileVisitor<Path> {
         stringBuffer.append(s);
       }
     }
-    String digest = SHA1Util.getSha1(file.toString()); // 如果文件不存在,返回的digest为null
+    String digest = SHA1Utils.getSha1(file.toString()); // 如果文件不存在,返回的digest为null
     if (digest == null) {
       return FileVisitResult.CONTINUE;
     }
