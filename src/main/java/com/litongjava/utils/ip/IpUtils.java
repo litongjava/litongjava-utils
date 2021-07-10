@@ -4,13 +4,16 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
 
-public class IPUtils {
+public class IpUtils {
   /**
    * 获取本机局域网IP地址
    */
-  public static InetAddress getLocalHostLANAddress() {
+  public static List<InetAddress> getLocalHostLANAddress() {
+    List<InetAddress> retval = new ArrayList<>();
     // 1.获取所有网络接口
     Enumeration<NetworkInterface> networkInterfaces = null;
     try {
@@ -18,7 +21,6 @@ public class IPUtils {
     } catch (SocketException e1) {
       e1.printStackTrace();
     }
-    InetAddress candidateAddress = null;
     // 2.遍历网络接口
     while (networkInterfaces.hasMoreElements()) {
       NetworkInterface networkInterface = networkInterfaces.nextElement();
@@ -27,32 +29,46 @@ public class IPUtils {
       while (inetAddresses.hasMoreElements()) {
         InetAddress inetAddress = inetAddresses.nextElement();
         // 4.排除loopback类型地址,取出是site-local地址
-        if (isLocalIf(inetAddress)) {
-          return inetAddress;
-        } else {// 5.site-local类型的地址未被发现，先记录候选地址
-          candidateAddress = inetAddress;
+        if (isRealIp(inetAddress)) {
+          retval.add(inetAddress);
         }
+//        else {// 5.site-local类型的地址未被发现，先记录候选地址
+//          candidateAddress = inetAddress;
+//          retval.add(candidateAddress);
+//        }
       }
     }
-    if (candidateAddress != null) {
-      return candidateAddress;
+
+    if (retval.size() < 1) {
+      // 6.如果没有发现 non-loopback地址.只能用最次选的方案
+      try {
+        InetAddress localHost = InetAddress.getLocalHost();
+        retval.add(localHost);
+      } catch (UnknownHostException e) {
+        e.printStackTrace();
+      }
     }
 
-    // 6.如果没有发现 non-loopback地址.只能用最次选的方案
-    try {
-      InetAddress localHost = InetAddress.getLocalHost();
-      return localHost;
-    } catch (UnknownHostException e) {
-      e.printStackTrace();
-    }
-    // 7.最后返回null
-    return null;
+    // 7.最后返回
+    return retval;
   }
 
   /**
-   * 如果是本地网卡,返回true
+   * 判断是否为可以输出的ip地址
    */
-  private static boolean isLocalIf(InetAddress inetAddress) {
+  private static boolean isRealIp(InetAddress inetAddress) {
+//    System.out.println(inetAddress.getHostAddress());
+//    System.out.println(inetAddress.isAnyLocalAddress());
+//    System.out.println(inetAddress.isLinkLocalAddress());
+//    System.out.println(inetAddress.isLoopbackAddress());
+//    System.out.println(inetAddress.isMCGlobal());
+//    System.out.println(inetAddress.isMCLinkLocal());
+//    System.out.println(inetAddress.isMCNodeLocal());
+//    System.out.println(inetAddress.isMCOrgLocal());
+//    System.out.println(inetAddress.isMCSiteLocal());
+//    System.out.println(inetAddress.isMulticastAddress());
+//    System.out.println(inetAddress.isSiteLocalAddress());
+
     return inetAddress.isSiteLocalAddress() && !inetAddress.getHostAddress().equals("172.17.0.1");
   }
 
@@ -100,9 +116,17 @@ public class IPUtils {
    * @param port
    * @param contextPath
    */
-  public static String getThisUrl(int port, String contextPath) {
-    String ip = getLocalHostLANAddress().getHostAddress();
-    String retval = "http://" + ip + ":" + port + contextPath;
+  public static String[] getThisUrl(int port, String contextPath) {
+    List<InetAddress> localHostLANAddress = getLocalHostLANAddress();
+    String[] retval = new String[localHostLANAddress.size()];
+
+    for (int i = 0; i < localHostLANAddress.size(); i++) {
+      InetAddress inetAddress = localHostLANAddress.get(i);
+      String message="http://" + inetAddress.getHostAddress() + ":" + port + contextPath;
+      retval[i] = message;
+      System.out.println(message);
+    }
+
     return retval;
   }
 }

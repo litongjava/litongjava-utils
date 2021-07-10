@@ -12,13 +12,13 @@ import java.util.Properties;
  * @version 1.0 
  * @desc 读取properties 文件
  */
-public class PropUtil {
+public class PropUtils {
   private static Properties prop = null;
   private static InputStream ins = null;
 
   static {
     // 读取 properties开始
-    ins = PropUtil.class.getResourceAsStream("/application.properties");
+    ins = PropUtils.class.getResourceAsStream("/application.properties");
 
     // InputStream转为InputStreamReader
     InputStreamReader insReader = null;
