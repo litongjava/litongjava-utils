@@ -9,7 +9,7 @@ java开发常用工具类和实体类
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 默认使用的sfl4j+logback,可以排除logback
@@ -31,7 +31,7 @@ jave-all-deps 非常大,如果不需要也可以排除
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <exclusions>
     <exclusion>
       <groupId>ch.qos.logback</groupId>

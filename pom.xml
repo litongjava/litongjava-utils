@@ -6,7 +6,7 @@
   <version>1.0.1</version>
   <packaging>jar</packaging>
   <name>litongjava-utils</name>
-  <description>spring-boot开发者福音,修改java文件后按Ctrl+S可在1s内生效,省去手动重启spring-boot的时间</description>
+  <description>java开发常用工具类封装</description>
   <url>https://github.com/litongjava/litongjava-utils</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
