@@ -13,6 +13,7 @@ import java.util.Properties;
  * @desc 读取properties 文件
  */
 public class PropUtils {
+  
   private static Properties prop = null;
   private static InputStream ins = null;
 
