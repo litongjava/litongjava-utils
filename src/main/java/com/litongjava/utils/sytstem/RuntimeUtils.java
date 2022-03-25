@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * @date 2018年5月3日_上午11:33:56
  * @version 1.0 runtime的工具类
  */
-public class RuntimeUtil {
+public class RuntimeUtils {
 
   public static final String LINUX = "Linux";
   public static final String WINDOWS = "Windows";
@@ -22,6 +22,10 @@ public class RuntimeUtil {
    */
   static {
     osType = System.getProperty("os.name");
+  }
+  
+  public static String getOsType() {
+    return osType;
   }
 
   /**

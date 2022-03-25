@@ -8,4 +8,5 @@ package com.litongjava.utils.sytstem;
 public class OSType {
   public static final String LINUX = "Linux";
   public static final String WINDOWS = "Windows";
+  public static final String WINDOWS10 ="Windows 10";
 }

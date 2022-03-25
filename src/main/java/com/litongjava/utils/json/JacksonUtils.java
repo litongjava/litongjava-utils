@@ -5,10 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author litong
- * @date 2018��6��5��14:54:41
- * jackson util
+ * jackson utils
  */
-public class JacksonUtil {
+public class JacksonUtils {
   private static final ObjectMapper objMapper = new ObjectMapper();
 
   public static String toJson(Object obj) {

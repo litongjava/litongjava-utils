@@ -2,6 +2,10 @@ package com.litongjava.utils.file;
 
 import java.io.File;
 
+import org.apache.commons.io.FilenameUtils;
+
+import com.litongjava.utils.string.StringUtils;
+
 /**
  * @author litongjava
  * @date 2020年9月6日_下午8:46:48 
@@ -40,6 +44,19 @@ public class PathUtils {
       stringBuffer.append(array[i] + File.separator);
     }
     return stringBuffer;
+  }
+
+  /**
+   * 通过路径名判断是否为目录
+   * @param absolutePath
+   * @return
+   */
+  public static boolean isDirecotry(String absolutePath) {
+    String extension = FilenameUtils.getExtension(absolutePath);
+    if(StringUtils.isEmpty(extension)) {
+      return true;
+    }
+    return false;
   }
 
 }

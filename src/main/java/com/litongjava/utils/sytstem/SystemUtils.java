@@ -6,7 +6,7 @@ package com.litongjava.utils.sytstem;
  * @version 1.0
  * 系统工具类,封装 System.getProperty属性 
  */
-public class SystemUtil {
+public class SystemUtils {
 
   private static String fileSeprator;
   private static String userDir;
@@ -33,7 +33,7 @@ public class SystemUtil {
   }
 
   public static void main(String[] args) {
-    String dir = SystemUtil.getUserDir();
+    String dir = SystemUtils.getUserDir();
     System.out.println(dir);
   }
 }
