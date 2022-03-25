@@ -1,6 +1,11 @@
 # litongjava-utils
+java开发常用工具类和实体类封装
+开源地址  
 
-java开发常用工具类和实体类  
+开源地址  
+[https://github.com/litongjava/litongjava-utils](https://github.com/litongjava/litongjava-utils)  
+[https://gitee.com/ppnt/litongjava-utils](https://gitee.com/ppnt/litongjava-utils)
+
 
 ## 使用步骤
 
