@@ -14,7 +14,7 @@ java开发常用工具类和实体类封装
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 默认使用的日志是sfl4j+logback,如果日志框架冲突可以使用下面的配置排除logback
@@ -22,7 +22,7 @@ java开发常用工具类和实体类封装
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.3</version>
   <exclusions>
     <exclusion>
       <groupId>ch.qos.logback</groupId>
@@ -34,6 +34,15 @@ java开发常用工具类和实体类封装
 
 ### 使用工具类  
 工具类都在com.litongjava.utils下,使用也和简单,那个工具列不会用可提issue,我会解答  
+#### ClassPathUtils
+```
+URL resource = new ClassPathResource(filepath).getResource();
+```
+#### ClassPathResource
+```
+URL url = ClassPathUtils.getResource("timg.jpg");
+```
+#### ExcelUtils
 使用ExcelUtils工具类导出Excel表格
 ```
 import java.util.ArrayList;
