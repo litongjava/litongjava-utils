@@ -4,7 +4,6 @@
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
   <version>1.0.2</version>
-  <packaging>jar</packaging>
   <name>litongjava-utils</name>
   <description>java开发常用工具类封装</description>
   <url>https://github.com/litongjava/litongjava-utils</url>
