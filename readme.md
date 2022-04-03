@@ -43,7 +43,8 @@ URL resource = new ClassPathResource(filepath).getResource();
 URL url = ClassPathUtils.getResource("timg.jpg");
 ```
 #### ExcelUtils
-使用ExcelUtils工具类导出Excel表格
+使用ExcelUtils工具类导出Excel表格  
+
 ```
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,10 +58,6 @@ import com.litongjava.utils.excel.ExcelUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * @author create by Ping E Lee on 2022年3月25日 上午9:14:44
- *
- */
 @Controller
 @RequestMapping("excel")
 public class ExcelController {

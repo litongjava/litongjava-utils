@@ -7,10 +7,10 @@ import java.lang.reflect.Field;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class LibraryUtil {
+public class LibraryUtils {
 
-  public static void addLibary() {
-    File file = new File("lib");
+  public static void addLibary(String path) {
+    File file = new File(path);
     String absolutePath = file.getAbsolutePath();
     log.info("add lib:{}",absolutePath);
     if (!file.exists()) {
