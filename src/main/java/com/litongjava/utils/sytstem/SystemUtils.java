@@ -26,7 +26,6 @@ public class SystemUtils {
 
   /**
    * 获取程序运行目录
-   * @param args
    */
   public static String getUserDir() {
     return userDir;

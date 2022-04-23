@@ -178,7 +178,7 @@ public class FtpUtil {
    * 上传多个文件到ftp_server
    *
    * @param localFiles
-   * @return Map< filename:String,isUploadSuucess:Boolean>
+   * @return Map 泛型开始filename:String,isUploadSuucess:Boolean泛型结束
    */
   public static Map<String, Boolean> upload(List<String> localFiles) {
     Map<String, Boolean> retval = new HashMap<>();

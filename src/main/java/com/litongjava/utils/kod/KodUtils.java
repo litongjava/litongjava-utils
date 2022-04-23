@@ -103,18 +103,17 @@ public class KodUtils {
     return retval;
   }
 
-  public static String upload(String serverURL, String username, String apiLoginToken, String uploadTo,
-                              FileInputStream fis, String filePath) {
+  public static String upload(String serverURL, String username, String apiLoginToken, String uploadTo, FileInputStream fis, String filePath) {
     String accessToken = getAccessToken(serverURL, username, apiLoginToken);
     StringBuffer append = URLUtil.append(serverURL, "?explorer/fileUpload");
     Map<String, Object> params = new HashMap<>();
     params.put("accessToken", accessToken);
     params.put("upload_to", uploadTo);
-    //请求地址中的请求参数
+    // 请求地址中的请求参数
     StringBuffer queryParams = HttpClientUtils.buildHttpQueryParams(params);
-    //完整的请求地址
-    String url=append.toString()+queryParams.toString();
-    
+    // 完整的请求地址
+    String url = append.toString() + queryParams.toString();
+
     StringBuilder stringBuilder = FileUploadUtil.uploadFile(url, fis, "file", filePath);
     return stringBuilder.toString();
   }
@@ -151,8 +150,7 @@ public class KodUtils {
   /**
    * 上传文件
    */
-  public static String upload(String serverURL, String username, String apiLoginToken, String uploadTo,
-                              String localFilepath) {
+  public static String upload(String serverURL, String username, String apiLoginToken, String uploadTo, String localFilepath) {
     File localFile = new File(localFilepath);
     String upload = upload(serverURL, username, apiLoginToken, uploadTo, localFile);
     return upload;
@@ -161,8 +159,7 @@ public class KodUtils {
   /**
    * 设置分享文件
    */
-  public static String setUserShare(String serverURL, String username, String apiLoginToken, String fileType,
-                                    String remoteFilePath) {
+  public static String setUserShare(String serverURL, String username, String apiLoginToken, String fileType, String remoteFilePath) {
     String accessToken = getAccessToken(serverURL, username, apiLoginToken);
     String name = FilenameUtils.getName(remoteFilePath);
     Map<String, Object> params = new HashMap<>();
@@ -177,9 +174,13 @@ public class KodUtils {
 
   /**
    * 获取分享文件列表 正常的文件分享链接如下
-   * http://zhishi.uairobot.com/index.php?share/file&user=1&sid=TpGnCQ9X
+   * 
    */
   public static String getUserShare(String serverURL, String username, String apiLoginTonken) {
+    /*
+     * serverURL eg
+     * http://zhishi.uairobot.com/index.php?share/file&user=1&sid=TpGnCQ9X
+     */
     String retval = null;
     StringBuffer append = URLUtil.append(serverURL, "?userShare/get");
     String accessToken = getAccessToken(serverURL, username, apiLoginTonken);
@@ -207,8 +208,7 @@ public class KodUtils {
    *          河北师范大学2018年招生章程.docx
    * @return
    */
-  public static String uploadAndShare(String serverURL, String username, String apiLoginTonken, String uploadTo,
-                                      File localFile) {
+  public static String uploadAndShare(String serverURL, String username, String apiLoginTonken, String uploadTo, File localFile) {
     // 查询本地缓存,如果查询到则返回
     String sha1 = SHA1Utils.getSha1(localFile);
     SidCache sidCache = sidCacheMap.get(sha1);
@@ -349,8 +349,7 @@ public class KodUtils {
    * @param absPath
    * @return
    */
-  public static String pathInfo(String serverURL, String username, String apiLoginTonken, String fileType,
-                                String absPath) {
+  public static String pathInfo(String serverURL, String username, String apiLoginTonken, String fileType, String absPath) {
     JSONArray jsonArray = new JSONArray();
     JSONObject jsonObject = new JSONObject();
     jsonObject.put("type", fileType);

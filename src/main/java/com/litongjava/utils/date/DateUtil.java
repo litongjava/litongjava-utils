@@ -58,7 +58,7 @@ public class DateUtil {
   }
 
   /**
-   * java.lang.String ==> java.util.Date
+   * java.lang.String 转为 java.util.Date
    * @throws ParseException 
    */
   public Date toDate(String str, String format) throws ParseException {
@@ -68,7 +68,7 @@ public class DateUtil {
   }
 
   /**
-   * java.util.Date==>java.lang.String
+   * java.util.Date转为java.lang.String
    */
   public String toString(Date date, String format) {
     SimpleDateFormat sdf = getSimpleDateFormat(format);
@@ -120,7 +120,7 @@ public class DateUtil {
     // long time = date.getTime();
     return null;
   }
-  
+
   public static Date getFirstDayOfMonth() {
     Calendar cal = Calendar.getInstance();
     // 获取某月最小天数
@@ -181,7 +181,7 @@ public class DateUtil {
   }
 
   /**
-   * 生效日期，失效日期 String->BigDecimal
+   * 生效日期，失效日期 String转为BigDecimal
    * 
    * @param effectiveDate
    * @return BigDecimal
@@ -198,7 +198,7 @@ public class DateUtil {
   }
 
   /**
-   * 生效日期，失效日期 BigDecimal->String
+   * 生效日期，失效日期 BigDecimal转为 String
    * 
    * @param effectiveDate
    * @return String

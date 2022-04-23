@@ -33,4 +33,8 @@ public class PVU {
   public static boolean isDev() {
     return ProjectVariableUtil.isDev();
   }
+  
+  public static void init(ProjectVariableInit pvi) {
+    ProjectVariableUtil.init(pvi); 
+  }
 }

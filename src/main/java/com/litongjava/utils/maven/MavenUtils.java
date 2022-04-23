@@ -45,7 +45,10 @@ public class MavenUtils {
     String artifactid = getArtifactId(jarNmae);
     // remote com.ojdbc14\10.2.0.4.0\ojdbc14-10.2.0.4.0.jar
     System.out.println(all);
-    all = StringUtils.removeSuffix(all, "\\" + artifactid + "\\" + version + "\\" + jarNmae); // ==> all = com\ojdbc14
+    all = StringUtils.removeSuffix(all, "\\" + artifactid + "\\" + version + "\\" + jarNmae); // ==>
+                                                                                              // all
+                                                                                              // =
+                                                                                              // com\ojdbc14
     String groupid = all.replace("\\", ".");// ==> all= com.ojdbc4
     System.out.println(all);
     // 构造返回值返回
@@ -59,9 +62,7 @@ public class MavenUtils {
   /**
    * 根据 jar包 全名 获取 artifactid
    *
-   * @param jar
-   *          ojdbc14-10.2.0.4.0.jar
-   *          spring-context-support-1.0.6.jar
+   * @param jarName ojdbc14-10.2.0.4.0.jar or spring-context-support-1.0.6.jar
    * @return
    */
   public static String getArtifactId(String jarName) {
@@ -71,7 +72,8 @@ public class MavenUtils {
 
   /**
    * 
-   * @param split
+   * @param strings
+   * @return
    */
   public static String getArtifactId(String[] strings) {
     StringBuffer stringBuffer = new StringBuffer();

@@ -14,13 +14,22 @@ public class ProjectVariableUtil {
   public static String name; // 模式
   public static String mode; // 工程名
 
+  public static void init(ProjectVariableInit pvi) {
+    pvi.initValue();
+    // 保存配置文件
+    ProjectVariableUtil.store();
+  }
   static {
-    name = NameAndMod.map.get(NameAndMod.name);
-    if (isEmpty(name))
+    name = NameAndMode.map.get(NameAndMode.name);
+    if (isEmpty(name)) {
       name = "";
-    mode = NameAndMod.map.get(NameAndMod.mode);
-    if (isEmpty(mode))
+    }
+      
+    mode = NameAndMode.map.get(NameAndMode.mode);
+    if (isEmpty(mode)) {
       mode = "";
+    }
+      
     configFileName = "project-variable-" + name + "-" + mode + ".json";
     File configFile = new File(configFileName);
     log.info("工程变量配置文件全路径:" + configFile.getAbsolutePath());
@@ -36,11 +45,8 @@ public class ProjectVariableUtil {
       e.printStackTrace();
     }
     // 启动后如果值不存在,则设置默认值
-    add("project.name", "工程名字", name, true, false);
-    add("project.mode", "工程的开发模式", mode, true, false);
-    ProjectVariableInit.initValue();
-    // 保存配置文件
-    ProjectVariableUtil.store();
+    add(NameAndMode.name, "工程名字", name, true, false);
+    add(NameAndMode.mode, "工程的开发模式", mode, true, false);
   }
 
   public static boolean isEmpty(Object str) {

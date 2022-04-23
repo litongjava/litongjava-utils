@@ -35,7 +35,7 @@ public class DesedeUtils {
   /**
    * 解密
    * @param dest
-   * @param key
+   * @param ssoKey
    * @return
    * @throws Exception
    */

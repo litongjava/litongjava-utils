@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class AttachmentUtil {
   /**
-   * 判断返回的消息是不是附件消息 1.包含 attachment.action?id= 2.包含&name=
+   * 判断返回的消息是不是附件消息 
    * 
    * @param content
    * @return
@@ -53,15 +53,18 @@ public class AttachmentUtil {
   /**
    * 一般情况下,content内容如下
    *
-   * [link url=\"http://ibotcluster.online.uairobot.com/robot/app/bjhg/attachment
-   * .action?id=20180925125245390&name=LAI.docx\"]这里[/link]
    *
    * 相关问
    *
    * 知识点满意度调查
    */
-  //将link中的这里设置为 <font size="18">这里</font>
+  // 将link中的这里设置为 <font size="18">这里</font>
   public static String addFontTag(String content, String fontSize) {
+    /*
+     * [link
+     * url=\"http://ibotcluster.online.uairobot.com/robot/app/bjhg/attachment
+     * .action?id=20180925125245390&name=LAI.docx\"]这里[/link]
+     */
     Map<String, String> map = new HashMap<>();
     Pattern pattern = Pattern.compile("\\[link( url=\")?(.*?)(\")?\\](.*?)\\[/link\\]");
     Matcher matcher = pattern.matcher(content);

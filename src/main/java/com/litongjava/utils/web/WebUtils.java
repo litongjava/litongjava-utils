@@ -13,7 +13,6 @@ public class WebUtils {
 
   /**
    * 设置当前登录用户的对象
-   * @return
    */
   public static void setUser(HttpServletRequest request, UserModel user) {
     request.getSession().setAttribute(USER_TAG, user);
@@ -34,7 +33,7 @@ public class WebUtils {
   /**
    * set response header for user
    * @param response
-   * @param id
+   * @param token
    */
   public static void setUser(HttpServletResponse response, String token) {
     response.setHeader(USER_SET_TOKEN, token);
@@ -44,7 +43,7 @@ public class WebUtils {
    * 设置登录成功后的信息
    * @param request
    * @param response
-   * @param userModel
+   * @param user
    */
   public static void setUser(HttpServletRequest request, HttpServletResponse response, UserModel user) {
     setUser(request, user);

@@ -57,9 +57,8 @@ public class LReflectionUtils {
 
   /**
    * 执行实体类的get方法
-   * @param <T>
    * @param obj
-   * @param field
+   * @param fieldName
    * @return
    */
   public static Object invokeGetMethod(Object obj, String fieldName) {

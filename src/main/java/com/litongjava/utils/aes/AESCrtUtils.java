@@ -34,13 +34,9 @@ public class AESCrtUtils {
 
   /*
    * AES CRT加密
-   * 
    * @param content 要加密的内容
-   * 
-   * @param key 加密文件的秘钥
-   * 
-   * @param iv 加密的偏移量
-   * 
+   * @param keyBytes 加密文件的秘钥
+   * @param ivBytes 加密的偏移量
    * @return 输出Hex十六进制再次加密的结果
    **/
   public static String encrypt(String content, byte[] keyBytes, byte[] ivBytes) {
@@ -76,10 +72,9 @@ public class AESCrtUtils {
 
   /**
    * AES CTR 解密
-   *
-   * @param encode 加密过后的文件
-   * @param iv     偏移量
-   * @param key    秘钥文件
+   * @param encodeBytes 加密过后的文件
+   * @param keyBytes     偏移量
+   * @param ivBytes    秘钥文件
    */
   public static byte[] decrypt(byte[] encodeBytes, byte[] keyBytes, byte[] ivBytes) {
     try {
@@ -104,6 +99,7 @@ public class AESCrtUtils {
     }
     return null;
   }
+
   /**
    * 解密
    * @param encode

@@ -1,8 +1,6 @@
 package com.litongjava.utils.projectvariable;
 
-public class ProjectVariableInit {
+public interface ProjectVariableInit {
 
-  public static void initValue() {
-
-  }
+  public void initValue();
 }

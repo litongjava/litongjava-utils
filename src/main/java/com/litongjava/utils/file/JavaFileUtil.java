@@ -27,7 +27,6 @@ public class JavaFileUtil {
   /**
    * 查找指定路径下的所有jar包
    * @param absPath jar包所在目录的绝对路径
-   * @return
    */
   public static void onlyFindJar(String absPath) {
     // retval 保存返回值

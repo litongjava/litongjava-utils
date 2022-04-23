@@ -17,8 +17,8 @@ public class PathUtils {
   /**
    * 获取路径的父路径 * 
    * <pre>
-   * /root/dev_workspace/java/1.java==>/root/dev_workspace/java
-   * /root/dev_workspace/java ==>/root/dev_workspace
+   * /root/dev_workspace/java/1.java获取到的是/root/dev_workspace/java
+   * /root/dev_workspace/java 获取到的是/root/dev_workspace
    * </pre>
    * 
    * @return

@@ -30,7 +30,7 @@ public class InputStreamUtil {
   /**
    * 将InputStream中的流转成字符串
    * @param in
-   * @param bufferSize
+   * @param encode
    * @return
    */
   public static String ConvertToString(InputStream in, String encode) {

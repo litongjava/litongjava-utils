@@ -104,10 +104,9 @@ public class DOMXMLUtil {
   }
 
   /**
-   * 
-   * @param string
+   * @param tagName
    * @param content
-   * @param rootElement
+   * @param document
    */
   public static void addToRoot(String tagName, String content, Document document) {
     Element rootElement = document.getDocumentElement();

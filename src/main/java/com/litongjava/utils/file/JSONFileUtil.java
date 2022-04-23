@@ -28,7 +28,6 @@ public class JSONFileUtil {
 
   /**
    * 保存json文件到
-   * @param clazz
    * @param t
    * @param filename
    */

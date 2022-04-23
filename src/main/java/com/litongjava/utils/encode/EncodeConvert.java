@@ -9,7 +9,7 @@ package com.litongjava.utils.encode;
 public class EncodeConvert {
   /**
    * 如果为空着不进行转换,如果不为空,则转换
-   * @param ISO88590Str
+   * @param ISO88591Str
    * @return
    */
   public String ISO88591toUTF8(String ISO88591Str) {
