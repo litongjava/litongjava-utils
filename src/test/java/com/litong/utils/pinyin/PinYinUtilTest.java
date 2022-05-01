@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.litongjava.utils.pinyin.PinyinUtil;
+import com.litongjava.utils.pinyin.PinyinUtils;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 
@@ -29,8 +29,8 @@ public class PinYinUtilTest {
   @Test
   public void toPinyin() {
     String input = "中华人民共和国";
-    PinyinUtil pinyinUtil = new PinyinUtil();
-    String pinyinString = pinyinUtil.toPinyinString(input);
+    PinyinUtils pinyinUtils = new PinyinUtils();
+    String pinyinString = pinyinUtils.toPinyinString(input);
     System.out.println(pinyinString);
   }
 
@@ -50,10 +50,10 @@ public class PinYinUtilTest {
    */
   @Test
   public void isHanzi0() {
-    PinyinUtil pinyinUtil = new PinyinUtil();
-    System.out.println(pinyinUtil.isHanzi("内资"));
-    System.out.println(pinyinUtil.isHanzi("内zi"));
-    System.out.println(pinyinUtil.isHanzi("neizi"));
+    PinyinUtils pinyinUtils = new PinyinUtils();
+    System.out.println(pinyinUtils.isHanzi("内资"));
+    System.out.println(pinyinUtils.isHanzi("内zi"));
+    System.out.println(pinyinUtils.isHanzi("neizi"));
   }
 
   /**

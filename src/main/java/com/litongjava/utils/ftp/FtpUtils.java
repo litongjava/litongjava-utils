@@ -16,8 +16,8 @@ import org.apache.commons.net.ftp.FTPReply;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.litongjava.utils.file.ConfigUtil;
-import com.litongjava.utils.file.FileUtil;
+import com.litongjava.utils.file.ConfigUtils;
+import com.litongjava.utils.file.FileUtils;
 
 
 /**
@@ -26,13 +26,13 @@ import com.litongjava.utils.file.FileUtil;
  * 该工具类只支持连接一台ftp_server,连接在上传文件关闭后自动关闭，其它情况下不会关闭连接
  */
 
-public class FtpUtil {
-  private static String ftp_server = ConfigUtil.getValue("ftp_server");
-  private static Integer ftp_port = Integer.valueOf(ConfigUtil.getValue("ftp_port"));
-  private static String ftp_user = ConfigUtil.getValue("ftp_user");
-  private static String ftp_password = ConfigUtil.getValue("ftp_password");
+public class FtpUtils {
+  private static String ftp_server = ConfigUtils.getValue("ftp_server");
+  private static Integer ftp_port = Integer.valueOf(ConfigUtils.getValue("ftp_port"));
+  private static String ftp_user = ConfigUtils.getValue("ftp_user");
+  private static String ftp_password = ConfigUtils.getValue("ftp_password");
   private static FTPClient ftpClient = new FTPClient();
-  private static Logger log = LoggerFactory.getLogger(FtpUtil.class);
+  private static Logger log = LoggerFactory.getLogger(FtpUtils.class);
 
   static {
     try {
@@ -136,7 +136,7 @@ public class FtpUtil {
       FileInputStream ins = new FileInputStream(localFile);
       // localFile=new String(localFile.getBytes("UTF-8"),ftp_server_encode);
       bufIns = new BufferedInputStream(ins);
-      isUploadSuccess = ftpClient.storeFile(FileUtil.getFileName(localFile), bufIns);
+      isUploadSuccess = ftpClient.storeFile(FileUtils.getFileName(localFile), bufIns);
       if (isUploadSuccess) {
         log.info("file upload success : " + localFile);
       } else {
@@ -205,7 +205,7 @@ public class FtpUtil {
    */
   public static Map<String, Boolean> uploadFoler(String foler) {
     Map<String, Boolean> retval = new HashMap<>();
-    String fileName = FileUtil.getFileName(foler);
+    String fileName = FileUtils.getFileName(foler);
     mkdir(fileName);
     setWorkDir(fileName);
     File[] files = new File(foler).listFiles();

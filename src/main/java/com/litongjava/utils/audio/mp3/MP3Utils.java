@@ -15,7 +15,7 @@ import org.apache.commons.io.IOUtils;
  * @date 2019年2月13日 上午11:46:31
  * @desc
  */
-public class MP3Util {
+public class MP3Utils {
 
   /**
    * 将pcm转为mp3 

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * Created by litong on 2018/4/7 0007. HttpServletRequest utils
  */
 
-public class RequestUtil {
+public class RequestUtils {
 	/**
 	 * 返回 HttpServletRequest中的IP地址
 	 * 

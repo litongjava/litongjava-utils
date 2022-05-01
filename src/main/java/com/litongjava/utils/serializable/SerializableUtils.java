@@ -16,12 +16,12 @@ import lombok.extern.slf4j.Slf4j;
  * @date 2019年1月11日 下午3:32:37
  */
 @Slf4j
-public class SerializableUtil {
+public class SerializableUtils {
   private static String configPath = null;
 
   static {
     // 如果configPath下存在 config文件夹,则创建config文件夹
-    URL url = SerializableUtil.class.getClassLoader().getResource("");
+    URL url = SerializableUtils.class.getClassLoader().getResource("");
     configPath = url.getFile() + File.separator + "config";
     File file = new File(configPath);
     if (!file.exists()) {

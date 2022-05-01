@@ -5,7 +5,7 @@ package com.litongjava.utils.string;
  * @date 2018年12月3日_下午5:31:42 
  * @version 1.0 
  */
-public class NameUtil {
+public class NameUtils {
 
   /**
    * 获取姓氏

@@ -19,7 +19,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.litongjava.utils.xml.dom.DOMUtil;
+import com.litongjava.utils.xml.dom.DOMUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -114,7 +114,7 @@ public class MavenInstall {
     String pomPath = jarPath + ".pom";
     String[] array = getPom(zipFile, pomPath);
     if (array[0].equals("0")) {
-      Document document = DOMUtil.stringToDom(array[2]);
+      Document document = DOMUtils.stringToDom(array[2]);
       Element rootEle = document.getDocumentElement();
       NodeList nodeList = rootEle.getElementsByTagName("groupId");
       String groupId = null;

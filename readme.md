@@ -6,7 +6,9 @@ java开发常用工具类和实体类封装
 [https://github.com/litongjava/litongjava-utils](https://github.com/litongjava/litongjava-utils)  
 [https://gitee.com/ppnt/litongjava-utils](https://gitee.com/ppnt/litongjava-utils)
 
-
+## 依赖文件
+依赖文件如
+![](readme_files/1.jpg)
 ## 使用步骤
 
 ### 添加依赖
@@ -22,7 +24,7 @@ java开发常用工具类和实体类封装
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <exclusions>
     <exclusion>
       <groupId>ch.qos.logback</groupId>

@@ -11,7 +11,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-public class DOMUtil {
+public class DOMUtils {
   private static DocumentBuilder db = null;
   static {
     // 创建factory

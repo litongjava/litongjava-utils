@@ -11,7 +11,7 @@ import java.util.List;
  * java 文件工具类 
  */
 
-public class JavaFileUtil {
+public class JavaFileUtils {
 
   // jars 存放jar包的去路径
   private static List<String> jars = new ArrayList<>();

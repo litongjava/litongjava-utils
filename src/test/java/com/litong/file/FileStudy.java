@@ -5,7 +5,7 @@ import java.net.URL;
 
 import org.junit.Test;
 
-import com.litongjava.utils.serializable.SerializableUtil;
+import com.litongjava.utils.serializable.SerializableUtils;
 
 /**
  * @author litong
@@ -42,7 +42,7 @@ public class FileStudy {
    */
   @Test
   public void study3() {
-    URL url = SerializableUtil.class.getClassLoader().getResource("");
+    URL url = SerializableUtils.class.getClassLoader().getResource("");
     System.out.println(url);
   }
 }

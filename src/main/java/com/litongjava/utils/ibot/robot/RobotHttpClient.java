@@ -7,7 +7,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 import com.litongjava.utils.http.litonghttpclient.HttpClientUtils;
 import com.litongjava.utils.string.StringUtils;
-import com.litongjava.utils.url.URLUtil;
+import com.litongjava.utils.url.UrlUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,7 +24,7 @@ public class RobotHttpClient {
    * 请求知识库
    */
   public static AskResponse ask(String robotURL, AskRequest data) {
-    StringBuffer append = URLUtil.append(robotURL, "ask.action");
+    StringBuffer append = UrlUtils.append(robotURL, "ask.action");
     Map<String, Object> params = new HashMap<>();
     params.put("userId", data.getUserId());
     params.put("question", data.getQuestion());
@@ -62,7 +62,7 @@ public class RobotHttpClient {
     if (StringUtils.isEmpty(data.getFormat())) {
       data.setFormat("json");
     }
-    String url = URLUtil.append(robotURL, "p4pages/hot-question.action").toString();
+    String url = UrlUtils.append(robotURL, "p4pages/hot-question.action").toString();
     Map<String, Object> params = new HashMap<>();
     params.put("platform", data.getPlatform());
     params.put("brand", data.getBrand());

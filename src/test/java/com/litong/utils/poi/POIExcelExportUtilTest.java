@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.litongjava.utils.poi.POIExcelExportUtil;
+import com.litongjava.utils.poi.POIExcelExportUtils;
 
 public class POIExcelExportUtilTest {
 
@@ -23,7 +23,7 @@ public class POIExcelExportUtilTest {
     }
     String[] titile = { "编号", "姓名", "地址" };
     File dst = new File("D:\\my_file\\my_excel\\user1.xls");
-    POIExcelExportUtil.export(titile, data, dst);
+    POIExcelExportUtils.export(titile, data, dst);
   }
 
   @Test

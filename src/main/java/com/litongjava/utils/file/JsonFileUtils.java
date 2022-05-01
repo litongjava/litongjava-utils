@@ -15,11 +15,11 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0 
  */
 @Slf4j
-public class JSONFileUtil {
+public class JsonFileUtils {
   private static String configPath = null;
   static {
     // 如果config文件夹不存在,则创建config文件夹
-    URL url = JSONFileUtil.class.getClassLoader().getResource("");
+    URL url = JsonFileUtils.class.getClassLoader().getResource("");
     configPath = url.getFile() + File.separator + "config";
     File file = new File(configPath);
     if (!file.exists())

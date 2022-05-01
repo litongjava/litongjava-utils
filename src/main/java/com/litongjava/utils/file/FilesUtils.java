@@ -10,7 +10,7 @@ import java.util.List;
  * @date 2019年1月8日_下午2:47:44 
  * @version 1.0 
  */
-public class FilesUtil {
+public class FilesUtils {
   public String readFile(String filepath) {
     StringBuffer stringBuffer = new StringBuffer();
     List<String> readAllLines = null;

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.litongjava.utils.xml.XStreamUtil;
+import com.litongjava.utils.xml.XStreamUtils;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.io.xml.DomDriver;
@@ -24,14 +24,14 @@ public class XStreamUtilTest {
   @Test
   public void test() {
     User user = new User("username", "password");
-    String beanToXML = XStreamUtil.beanToXML(user);
+    String beanToXML = XStreamUtils.beanToXML(user);
     System.out.println(beanToXML);
   }
 
   @Test
   public void xmlToBean() {
     String xml = "<user><username>username</username><password>password</password></user>";
-    User xmlToBean = XStreamUtil.XMLToBean(xml, User.class);
+    User xmlToBean = XStreamUtils.XMLToBean(xml, User.class);
     System.out.println(xmlToBean);
   }
 
@@ -45,7 +45,7 @@ public class XStreamUtilTest {
     imgTxtMsg1.setDescription("描述1");
     imgTxtMsg1.setPicUrl("pic url1");
     imgTxtMsg1.setUrl("url1");
-    String beanToXML = XStreamUtil.beanToXML(imgTxtMsg1);
+    String beanToXML = XStreamUtils.beanToXML(imgTxtMsg1);
     System.out.println(beanToXML);
   }
 
@@ -66,7 +66,7 @@ public class XStreamUtilTest {
     List<ImgTxtMsg> items = new ArrayList<ImgTxtMsg>();
     items.add(imgTxtMsg1);
     items.add(imgTxtMsg2);
-    String beanToXML = XStreamUtil.beanToXML(items);
+    String beanToXML = XStreamUtils.beanToXML(items);
     System.out.println(beanToXML);
   }
 

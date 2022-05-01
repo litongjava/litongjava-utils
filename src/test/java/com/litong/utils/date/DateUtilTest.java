@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.litongjava.utils.date.DateUtil;
+import com.litongjava.utils.date.DateUtils;
 
 /**
  * @author litong
@@ -45,7 +45,7 @@ public class DateUtilTest {
   @Test
   public void getFirstDayOfYear() {
     Date date = new Date();
-    Date firstDayOfYear = DateUtil.getFirstDayOfYear(date);
+    Date firstDayOfYear = DateUtils.getFirstDayOfYear(date);
     System.out.println(firstDayOfYear);
   }
   /**

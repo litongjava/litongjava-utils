@@ -5,7 +5,7 @@ package com.litongjava.utils.phone;
  * @date 2018-6-16
  *
  */
-public class PhoneUtil {
+public class PhoneUtils {
   /**
    * 验证手机号码
    * 

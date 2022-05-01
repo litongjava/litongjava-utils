@@ -2,7 +2,7 @@ package com.litong.utils.file;
 
 import java.util.List;
 
-import com.litongjava.utils.file.JavaFileUtil;
+import com.litongjava.utils.file.JavaFileUtils;
 
 /**
  * @author litong
@@ -17,7 +17,7 @@ public class JavaFileUtilTest {
   //@Test
   public void test() {
     String path="D:\\dev_workspace\\java\\litong_prject\\maven-util\\src\\main\\resources";
-    List<String> jars = JavaFileUtil.findJar(path);
+    List<String> jars = JavaFileUtils.findJar(path);
     for (String s : jars) {
       System.out.println(s);
     }

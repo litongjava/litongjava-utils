@@ -10,7 +10,7 @@ import java.net.URL;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
-import com.litongjava.utils.url.URLUtil;
+import com.litongjava.utils.url.UrlUtils;
 
 /**
  * @author litong
@@ -27,7 +27,7 @@ public class URLUtilTest {
   @Test
   public void getImageStream() {
     String url = "https://fanyi.bdstatic.com/static/translation/img/header/logo_cbfea26.png";
-    URLUtil urlUtil = new URLUtil();
+    UrlUtils urlUtil = new UrlUtils();
     InputStream imageStream = urlUtil.getImageStream(url);
     try {
       FileUtils.copyInputStreamToFile(imageStream, new File("log-001.png"));
@@ -40,7 +40,7 @@ public class URLUtilTest {
   public void getImageStream0() {
 
     String url = "https://fanyi.bdstatic.com/static/translation/img/header/logo_cbfea26.png";
-    URLUtil urlUtil = new URLUtil();
+    UrlUtils urlUtil = new UrlUtils();
     InputStream imageStream0 = urlUtil.getImageStream0(url);
     try {
       FileUtils.copyToFile(imageStream0, new File("logo-002.png"));

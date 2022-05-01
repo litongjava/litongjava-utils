@@ -12,7 +12,7 @@ import java.util.Map;
  * Created by litong on 2018/8/22 0022.
  * 处理时间的工具类
  */
-public class DateUtil {
+public class DateUtils {
   /**
    * 年,月,日
    */

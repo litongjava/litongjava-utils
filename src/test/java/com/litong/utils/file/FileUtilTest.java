@@ -4,7 +4,7 @@ import java.io.File;
 
 import org.junit.Test;
 
-import com.litongjava.utils.file.FileUtil;
+import com.litongjava.utils.file.FileUtils;
 
 /**
  * @author litong
@@ -17,7 +17,7 @@ public class FileUtilTest {
   public void test() {
     String path = "d:\\dev\\java\\path";
     File file = new File(path);
-    String absolutePath = FileUtil.getAbsolutePath(file);
+    String absolutePath = FileUtils.getAbsolutePath(file);
     System.out.println(absolutePath);
   }
 }

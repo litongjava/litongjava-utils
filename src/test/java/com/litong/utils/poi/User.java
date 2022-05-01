@@ -2,7 +2,7 @@ package com.litong.utils.poi;
 
 import java.util.Date;
 
-import com.litongjava.utils.date.DateFormatUtil;
+import com.litongjava.utils.date.DateFormatUtils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +19,7 @@ public class User {
   private String userIp;
   
   public User build() {
-    User user = new User(1,"李通","北京",1,DateFormatUtil.parseToDate("1998-01-01"),"192.168.0.1");
+    User user = new User(1,"李通","北京",1,DateFormatUtils.parseToDate("1998-01-01"),"192.168.0.1");
     return user;
   }
 }

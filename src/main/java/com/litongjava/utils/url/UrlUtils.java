@@ -11,7 +11,7 @@ import java.net.URL;
  * @date 2018年12月7日_下午5:12:12 
  * @version 1.0 
  */
-public class URLUtil {
+public class UrlUtils {
   /**
    * 获取网络图片流
    * 

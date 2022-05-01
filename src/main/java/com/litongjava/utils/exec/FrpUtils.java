@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  * @desc
  */
 @Slf4j
-public class FrpUtil implements Runnable {
+public class FrpUtils implements Runnable {
   public static void start() {
     File frpcExe = new File("lib/frp/frpc.exe");
     File frpcIni = new File("lib/frp/frpc.ini");
@@ -23,6 +23,6 @@ public class FrpUtil implements Runnable {
 
   @Override
   public void run() {
-    FrpUtil.start();
+    FrpUtils.start();
   }
 }

@@ -17,7 +17,7 @@ import com.litongjava.utils.digest.SHA1Utils;
 import com.litongjava.utils.http.FileUploadUtil;
 import com.litongjava.utils.http.litonghttpclient.HttpClientUtils;
 import com.litongjava.utils.io.IOUtils;
-import com.litongjava.utils.url.URLUtil;
+import com.litongjava.utils.url.UrlUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,11 +50,11 @@ public class KodUtils {
     if (cache == null || cache.isExpire()) { // 如果accessToken已经过期,重新请求
       // 1.请求 获取accessToekn
       String loginToken = getLoginToken(username, apiLoginTonken);
-      StringBuffer link = URLUtil.append(serverURL, "?user/accessToken");
+      StringBuffer link = UrlUtils.append(serverURL, "?user/accessToken");
       Map<String, Object> params = new HashMap<>();
       params.put("link", link.toString());
       params.put("login_token", loginToken);
-      serverURL = URLUtil.append(serverURL, "?user/loginSubmit").toString();
+      serverURL = UrlUtils.append(serverURL, "?user/loginSubmit").toString();
       String jsonString = HttpClientUtils.get(serverURL, params);
       // 2.解析返回的JSON
       JSONObject jsonObject = JSON.parseObject(jsonString);
@@ -95,7 +95,7 @@ public class KodUtils {
   public static String pathList(String serverURL, String username, String apiLoginTonken, String path) {
     String retval = null;
     String accessToken = getAccessToken(serverURL, username, apiLoginTonken);
-    StringBuffer append = URLUtil.append(serverURL, "?explorer/pathList");
+    StringBuffer append = UrlUtils.append(serverURL, "?explorer/pathList");
     Map<String, Object> params = new HashMap<>();
     params.put("accessToken", accessToken);
     params.put("path", path);
@@ -105,7 +105,7 @@ public class KodUtils {
 
   public static String upload(String serverURL, String username, String apiLoginToken, String uploadTo, FileInputStream fis, String filePath) {
     String accessToken = getAccessToken(serverURL, username, apiLoginToken);
-    StringBuffer append = URLUtil.append(serverURL, "?explorer/fileUpload");
+    StringBuffer append = UrlUtils.append(serverURL, "?explorer/fileUpload");
     Map<String, Object> params = new HashMap<>();
     params.put("accessToken", accessToken);
     params.put("upload_to", uploadTo);
@@ -163,7 +163,7 @@ public class KodUtils {
     String accessToken = getAccessToken(serverURL, username, apiLoginToken);
     String name = FilenameUtils.getName(remoteFilePath);
     Map<String, Object> params = new HashMap<>();
-    StringBuffer append = URLUtil.append(serverURL, "?userShare/set");
+    StringBuffer append = UrlUtils.append(serverURL, "?userShare/set");
     params.put("accessToken", accessToken);
     params.put("type", fileType);
     params.put("path", remoteFilePath);
@@ -182,7 +182,7 @@ public class KodUtils {
      * http://zhishi.uairobot.com/index.php?share/file&user=1&sid=TpGnCQ9X
      */
     String retval = null;
-    StringBuffer append = URLUtil.append(serverURL, "?userShare/get");
+    StringBuffer append = UrlUtils.append(serverURL, "?userShare/get");
     String accessToken = getAccessToken(serverURL, username, apiLoginTonken);
     Map<String, Object> params = new HashMap<>();
     params.put("accessToken", accessToken);
@@ -297,7 +297,7 @@ public class KodUtils {
    */
   public static String mkdir(String serverURL, String username, String apiLoginTonken, String uploadTo) {
     String accessToken = getAccessToken(serverURL, username, apiLoginTonken);
-    StringBuffer url = URLUtil.append(serverURL, "?explorer/mkdir");
+    StringBuffer url = UrlUtils.append(serverURL, "?explorer/mkdir");
     Map<String, Object> params = new HashMap<>();
     params.put("accessToken", accessToken);
     params.put("path", uploadTo);
@@ -320,7 +320,7 @@ public class KodUtils {
    * @return
    */
   public static String getDownloadURL(String serverURL, String sid) {
-    StringBuffer append = URLUtil.append(serverURL, "index.php?share/file&user=1&sid=" + sid);
+    StringBuffer append = UrlUtils.append(serverURL, "index.php?share/file&user=1&sid=" + sid);
     return append.toString();
   }
 
@@ -369,7 +369,7 @@ public class KodUtils {
    */
   private static String pathInfo(String serverURL, String username, String apiLoginTonken, JSONArray jsonArray) {
     String accessToken = getAccessToken(serverURL, username, apiLoginTonken);
-    StringBuffer url = URLUtil.append(serverURL, "?explorer/pathInfo");
+    StringBuffer url = UrlUtils.append(serverURL, "?explorer/pathInfo");
     Map<String, Object> params = new HashMap<>();
     params.put("accessToken", accessToken);
     params.put("dataArr", jsonArray.toJSONString());

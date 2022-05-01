@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import org.junit.Test;
 
-import com.litongjava.utils.serializable.SerializableUtil;
+import com.litongjava.utils.serializable.SerializableUtils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +20,7 @@ public class SerializableUtilTest {
   @Test
   public void test() {
     User user = new User("litong","123456");
-    SerializableUtil.writeToFile(user, "user.serializable");
+    SerializableUtils.writeToFile(user, "user.serializable");
   }
 
 }

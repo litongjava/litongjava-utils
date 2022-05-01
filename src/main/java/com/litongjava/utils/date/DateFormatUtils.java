@@ -9,7 +9,7 @@ import java.util.Date;
  * @date 2018-7-6
  *
  */
-public class DateFormatUtil {
+public class DateFormatUtils {
 
   private static String pattern1 = "yyy-MM-dd";
   private static String pattern2 = "yyy-MM-dd HH:mm:ss";

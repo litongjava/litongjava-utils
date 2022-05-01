@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
  * @version 1.0
  * xml转bean工具类 
  */
-public class XStreamUtil {
+public class XStreamUtils {
   private static XStream xStream = null;
   static {
     // 创建解析XML对象

@@ -1,6 +1,6 @@
 package com.litongjava.utils.string;
 
-import java.io.File;
+import java.io.File;import org.terracotta.offheapstore.storage.listener.ListenableStorageEngine;
 
 /**
  * @author litong
@@ -108,5 +108,21 @@ public class StringUtils {
     return null;
   }
 
-  
+  /**
+   * 连接字符串
+   * @param joinChar 连接符
+   * @param strs 连接数组
+   * @return
+   */
+  public static String join(String joinChar, String... strs) {
+    StringBuffer stringBuffer = new StringBuffer();
+    int length=strs.length;
+    for(int i=0;i<length-1;i++) {
+      stringBuffer.append(strs[i]+joinChar);
+    }
+    //拼接最后一个字符
+    stringBuffer.append(strs[length-1]);
+    return stringBuffer.toString();
+    
+  }
 }

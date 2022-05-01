@@ -5,7 +5,7 @@ import java.net.URL;
 
 import org.junit.Test;
 
-import com.litongjava.utils.file.ConfigUtil;
+import com.litongjava.utils.file.ConfigUtils;
 
 /**
  * @author Administrator
@@ -26,8 +26,8 @@ public class ConfigUtilTest {
    */
   @Test
   public void store() {
-    ConfigUtil.put("提示问数量","20");
-    String value = ConfigUtil.getValue("知识库地址");
+    ConfigUtils.put("提示问数量","20");
+    String value = ConfigUtils.getValue("知识库地址");
     System.out.println(value);
   }
 }

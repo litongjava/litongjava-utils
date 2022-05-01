@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @version 1.0
  * InputStream工具类 
  */
-public class InputStreamUtil {
+public class InputStreamUtils {
   /**
    * 将InputStream中的流转成字符串
    * @param in

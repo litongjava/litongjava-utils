@@ -15,7 +15,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
-public class POIExcelExportUtil {
+public class POIExcelExportUtils {
   public static void export(String[] title, String[][] data, File dst) {
     // 创建一个excel表格
     HSSFWorkbook wb = new HSSFWorkbook();

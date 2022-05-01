@@ -6,7 +6,7 @@ import java.io.File;
  * Created by litong on 2018/4/12 0012.
  * 处理文件的工具类
  */
-public class FileUtil {
+public class FileUtils {
 
   private static String startWith = "file:/";
   private static int startLen = "file:/".length();

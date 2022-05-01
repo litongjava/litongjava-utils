@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * @author litong 读取config.properties
  */
-public class ConfigUtil {
+public class ConfigUtils {
   private static String configFilePath = null;
   private static Properties prop = null;
   private static InputStream ins = null;
@@ -23,7 +23,7 @@ public class ConfigUtil {
   static {
     // 读取 mode.properties开始
     Properties modeProperties = new Properties();
-    InputStream resourceAsStream = ConfigUtil.class.getResourceAsStream("/mode.properties");
+    InputStream resourceAsStream = ConfigUtils.class.getResourceAsStream("/mode.properties");
     try {
       modeProperties.load(resourceAsStream);
     } catch (IOException e) {
@@ -31,7 +31,7 @@ public class ConfigUtil {
     }
     String mode = modeProperties.getProperty("mode");
     configFilePath = "config-" + mode + ".properties";
-    ins = ConfigUtil.class.getClassLoader().getResourceAsStream(configFilePath);
+    ins = ConfigUtils.class.getClassLoader().getResourceAsStream(configFilePath);
     // 防止读取乱码
     InputStreamReader insReader = null;
     try {
@@ -62,11 +62,11 @@ public class ConfigUtil {
    */
   public static void put(String key, String value) {
     prop.put(key, value);
-    ConfigUtil.save();
+    ConfigUtils.save();
   }
 
   public static void save() {
-    URL url = ConfigUtil.class.getClassLoader().getResource(configFilePath);
+    URL url = ConfigUtils.class.getClassLoader().getResource(configFilePath);
     File file = new File(url.getFile());
     FileOutputStream fileOutputStream = null;
     try {
@@ -100,7 +100,7 @@ public class ConfigUtil {
     // String value = ConfigUtil.getValue("prorject_id");
     // System.out.println(value);
 
-    Properties prop = ConfigUtil.getProperties();
+    Properties prop = ConfigUtils.getProperties();
     Set<Entry<Object, Object>> entrySet = prop.entrySet();
     for (Entry<Object, Object> entry : entrySet) {
       System.out.println("" + entry.getKey() + "=" + entry.getValue());

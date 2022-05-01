@@ -12,7 +12,7 @@ import net.sourceforge.pinyin4j.PinyinHelper;
  * @version 1.0 
  */
 @Slf4j
-public class PinyinUtil {
+public class PinyinUtils {
   // 汉字正则式
   private String hanyuRegex = "[\\u4E00-\\u9FA5]+";
   // 数字正则式
