@@ -16,7 +16,7 @@ java开发常用工具类和实体类封装
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.6</version>
 </dependency>
 ```
 默认使用的日志是sfl4j+logback,如果日志框架冲突可以使用下面的配置排除logback
@@ -24,7 +24,7 @@ java开发常用工具类和实体类封装
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
   <exclusions>
     <exclusion>
       <groupId>ch.qos.logback</groupId>

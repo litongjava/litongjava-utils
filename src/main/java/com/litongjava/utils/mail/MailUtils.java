@@ -3,11 +3,8 @@ package com.litongjava.utils.mail;
 import java.util.Properties;
 
 import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -18,6 +15,7 @@ import com.litongjava.utils.io.IOUtils;
  */
 public class MailUtils {
   private static String MAIL_HOST = "smtp.126.com";
+  private static int SMTP_PORT = 465;
   private static String MAIL_TRANSPORT_PROTOCOL = "smtp";
   private static String USER = "litongjava_alarm@126.com";
   // 不是密码,是授权码
@@ -45,41 +43,36 @@ public class MailUtils {
     prop.setProperty("mail.transport.protocol", MAIL_TRANSPORT_PROTOCOL);
     // 开启验证
     prop.setProperty("mail.smtp.auth", "true");
+    // 设置端口
+    prop.setProperty("mail.smtp.port", SMTP_PORT+"");
+    prop.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+    prop.setProperty("mail.smtp.socketFactory.fallback", "false");
+    prop.setProperty("mail.smtp.socketFactory.port", SMTP_PORT+"");
+
     // 获取session
     Session session = Session.getInstance(prop);
     // 开启debug模式时
     session.setDebug(isDebug);
     // 获取 tranport
     Transport ts = null;
-    try {
-      ts = session.getTransport();
-    } catch (NoSuchProviderException e) {
-      e.printStackTrace();
-    }
-    try {
-      ts.connect(MAIL_HOST, USER, PASSWORD);
-    } catch (MessagingException e) {
-      e.printStackTrace();
-    }
     MimeMessage message = new MimeMessage(session);
     try {
+      ts = session.getTransport();
+      ts.connect(MAIL_HOST,SMTP_PORT,USER, PASSWORD);
+
+      // 设置消息
       message.setFrom(new InternetAddress(USER));
       message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
       message.setSubject(subject);
       message.setText(content);
-    } catch (AddressException e) {
-      e.printStackTrace();
-    } catch (MessagingException e) {
-      e.printStackTrace();
-    }
-    try {
+
+      // 发送消息
       ts.sendMessage(message, message.getAllRecipients());
-    } catch (MessagingException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     } finally {
       IOUtils.closeQuietly(ts);
     }
-
   }
 
   public static void main(String[] args) {
