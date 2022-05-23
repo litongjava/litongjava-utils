@@ -1,6 +1,6 @@
 package com.litongjava.utils.string;
 
-import java.io.File;import org.terracotta.offheapstore.storage.listener.ListenableStorageEngine;
+import java.io.File;
 
 /**
  * @author litong
@@ -22,7 +22,11 @@ public class StringUtils {
     }
     return false;
   }
-  
+
+  public static boolean isNotEmpty(String value) {
+    return !isEmpty(value);
+  }
+
   public static boolean isBlank(String value) {
     if (value == null || value.length() == 0) {
       return true;
@@ -33,7 +37,6 @@ public class StringUtils {
   public static boolean isEmpty(Object value) {
     return value == null;
   }
-  
 
   public static boolean notBlank(String value) {
     if (isEmpty(value)) {
@@ -116,13 +119,13 @@ public class StringUtils {
    */
   public static String join(String joinChar, String... strs) {
     StringBuffer stringBuffer = new StringBuffer();
-    int length=strs.length;
-    for(int i=0;i<length-1;i++) {
-      stringBuffer.append(strs[i]+joinChar);
+    int length = strs.length;
+    for (int i = 0; i < length - 1; i++) {
+      stringBuffer.append(strs[i] + joinChar);
     }
-    //拼接最后一个字符
-    stringBuffer.append(strs[length-1]);
+    // 拼接最后一个字符
+    stringBuffer.append(strs[length - 1]);
     return stringBuffer.toString();
-    
+
   }
 }
