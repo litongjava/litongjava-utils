@@ -7,8 +7,12 @@ java开发常用工具类和实体类封装
 [https://gitee.com/ppnt/litongjava-utils](https://gitee.com/ppnt/litongjava-utils)
 
 ## 依赖文件
-依赖文件如
+依赖文件如下
 ![](readme_files/1.jpg)
+
+依赖文件如下
+![](readme_files/1.png)
+
 ## 使用步骤
 
 ### 添加依赖
@@ -35,7 +39,9 @@ java开发常用工具类和实体类封装
 ```
 
 ### 使用工具类  
-工具类都在com.litongjava.utils下,使用也和简单,那个工具列不会用可提issue,我会解答  
+工具类都在com.litongjava.utils下,使用比较简单,基本上看一下就会使用  
+那个工具类不会用可提issue,我会解答  
+下面列出一些工具类的使用方法
 #### ClassPathUtils
 ```
 URL resource = new ClassPathResource(filepath).getResource();
@@ -46,7 +52,7 @@ URL url = ClassPathUtils.getResource("timg.jpg");
 ```
 #### ExcelUtils
 使用ExcelUtils工具类导出Excel表格  
-
+完整代码示例如下
 ```
 import java.util.ArrayList;
 import java.util.Date;
@@ -86,5 +92,29 @@ public class ExcelController {
 ```
 List<Map<String, Object>> listMap = PoiExcelUtils.readExcel(filepath, 0);
 ```
-### 工程依赖
-![](readme_files/1.png)
+完整代码示例如下
+```
+package top.ppnt.arcsoft.face;
+
+import java.util.List;
+import java.util.Map;
+
+import com.litongjava.utils.excel.PoiExcelUtils;
+
+public class AppidAndSdkKey {
+  public static void main(String[] args) {
+    String appId = null;
+    String sdkKey = null;
+    String docPath = "D:\\document\\secret\\appkey-and-appscret.xls";
+    List<Map<String, Object>> listMap = PoiExcelUtils.readExcel(docPath, 0);
+    for (Map<String, Object> map : listMap) {
+      if ("12d28291e4314d48bcdd8a7566ba5337".equals(map.get("id"))) {
+        appId = (String) map.get("appid");
+        sdkKey = (String) map.get("apisecret");
+      }
+    }
+    System.out.println(appId + " " + sdkKey);
+  }
+}
+
+```
