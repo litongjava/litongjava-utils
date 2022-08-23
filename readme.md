@@ -92,7 +92,12 @@ public class ExcelController {
 ```
 List<Map<String, Object>> listMap = PoiExcelUtils.readExcel(filepath, 0);
 ```
-完整代码示例如下
+完整代码示例如下  
+excel文件  
+|id																|appid		|apisecret												|apikey														|
+|12d28291e4314d48bcdd8a7566ba5337	|qwdfrugi	|d8117b01d8e64fe5afffffffffffffff	|3718fffffffffffffffffffffffffff	|
+  
+读取代码
 ```
 package top.ppnt.arcsoft.face;
 
