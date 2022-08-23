@@ -81,5 +81,10 @@ public class ExcelController {
 }
 
 ```
+### PoiExcelUtils
+使用示例读取文件为 List<Map<String,Object>>
+```
+List<Map<String, Object>> listMap = PoiExcelUtils.readExcel(filepath, 0);
+```
 ### 工程依赖
 ![](readme_files/1.png)

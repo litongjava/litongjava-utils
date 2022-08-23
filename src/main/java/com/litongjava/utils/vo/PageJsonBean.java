@@ -17,4 +17,10 @@ public class PageJsonBean<T> extends JsonBean<List<T>> {
   private long pageNo;
   private long pageSize;
  
+  public PageJsonBean(long count, Integer pageNo, Integer pageSize, List<T> data) {
+    this.count=count;
+    this.pageNo=pageNo;
+    this.pageSize=pageSize;
+    super.setData(data);
+  }
 }
