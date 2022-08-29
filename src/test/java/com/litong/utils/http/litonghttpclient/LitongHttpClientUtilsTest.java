@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.litongjava.utils.http.litonghttpclient.HttpClientUtils;
+import com.litongjava.utils.httpclient.HttpClientUtils;
 
 /**
  * @author bill robot

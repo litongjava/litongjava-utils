@@ -1,4 +1,4 @@
-package com.litongjava.utils.http;
+package com.litongjava.utils.httpclient;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -22,7 +22,7 @@ import org.apache.commons.io.IOUtils;
  * @see 02.java模拟post.docx
  * 文件上传工具类 
  */
-public class FileUploadUtil {
+public class HttpUploadUtils {
   // 换行符
   private static final String newLine = "\r\n";
   private static final String boundaryPrefix = "--";
@@ -34,11 +34,12 @@ public class FileUploadUtil {
    * @return
    */
   public static StringBuilder uploadFile(String uploadURL, File localFile, String key) {
-    String path = localFile.getAbsolutePath();
+    //String path = localFile.getAbsolutePath();
+    String filename = localFile.getName();
     FileInputStream fis = null;
     try {
       fis = new FileInputStream(localFile);
-      return uploadFile(uploadURL, fis, key, path);
+      return uploadFile(uploadURL, fis, key, filename);
     } catch (FileNotFoundException e1) {
       e1.printStackTrace();
     } finally {
@@ -63,10 +64,10 @@ public class FileUploadUtil {
    * @param uploadURL
    * @param fis
    * @param key 文件上传的key
-   * @param filePath
+   * @param filename 上传的文件名
    * @return
    */
-  public static StringBuilder uploadFile(String uploadURL, InputStream fis, String key, String filePath) {
+  public static StringBuilder uploadFile(String uploadURL, InputStream fis, String key, String filename) {
     // 定义数据分隔线
     String BOUNDARY = "========7d4a6d158c9";
     // 构建文件上传请求体,StringBuilder虽然存在线程不安全问题,但是在该环境下不存
@@ -75,7 +76,7 @@ public class FileUploadUtil {
     sb.append(BOUNDARY);
     sb.append(newLine);
     // 文件参数,photo参数名可以随意修改
-    sb.append("Content-Disposition: form-data;name=\"" + key + "\";filename=\"" + filePath + "\"" + newLine);
+    sb.append("Content-Disposition: form-data;name=\"" + key + "\";filename=\"" + filename + "\"" + newLine);
     sb.append("Content-Type:application/octet-stream");
     // 参数头设置完以后需要两个换行，然后才是参数内容
     sb.append(newLine);

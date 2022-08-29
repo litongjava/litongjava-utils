@@ -10,7 +10,7 @@ java开发常用工具类和实体类封装
 依赖文件如下
 ![](readme_files/1.jpg)
 
-依赖文件如下
+依赖文件如下  
 ![](readme_files/1.png)
 
 ## 使用步骤
@@ -122,4 +122,28 @@ public class AppidAndSdkKey {
   }
 }
 
+```
+
+HttpUploadUtils
+```
+import org.junit.Test;
+
+import com.litongjava.utils.httpclient.HttpUploadUtils;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class HttpUploadUtilsTest {
+
+  @Test
+  public void testUpload() {
+    //上传地址
+    String uploadURL = "https://www.yozodcs.com/fcscloud/file/upload";
+    //上传文件
+    String localFilePath = "ppnt-yz-office-agent\\data\\upload\\2022\\8\\28\\22\\键鼠合一.doc";
+    //上传文件
+    StringBuilder string = HttpUploadUtils.uploadFile(uploadURL, localFilePath, "file");
+    log.info("{}",string);
+  }
+}
 ```

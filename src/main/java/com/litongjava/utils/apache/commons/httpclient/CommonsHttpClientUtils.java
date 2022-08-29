@@ -1,4 +1,4 @@
-package com.litongjava.utils.http.commonshttpclient;
+package com.litongjava.utils.apache.commons.httpclient;
 
 import java.io.BufferedReader;
 import java.io.IOException;

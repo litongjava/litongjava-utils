@@ -1,4 +1,4 @@
-package com.litongjava.utils.http.commonshttpclient;
+package com.litongjava.utils.apache.commons.httpclient;
 
 /**
  * @author litong

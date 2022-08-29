@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
-import com.litongjava.utils.http.litonghttpclient.HttpClientUtils;
+import com.litongjava.utils.httpclient.HttpClientUtils;
 import com.litongjava.utils.ibot.robot.AskResponse.PropsBean;
 
 import lombok.extern.slf4j.Slf4j;

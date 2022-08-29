@@ -1,4 +1,4 @@
-package com.litongjava.utils.http.litonghttpclient;
+package com.litongjava.utils.httpclient;
 
 import java.util.List;
 import java.util.Map;

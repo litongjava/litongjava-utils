@@ -1,4 +1,4 @@
-package com.litongjava.utils.http.litonghttpclient;
+package com.litongjava.utils.httpclient;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
  * @desc 文件下载工具类
  */
 @Slf4j
-public class HttpDownloadUtil {
+public class HttpDownloadUtils {
   public static String downloadFile(String localFilePath, String remoteURL) {
     log.info("开始下载:" + System.currentTimeMillis());
     URL httpURL = null;

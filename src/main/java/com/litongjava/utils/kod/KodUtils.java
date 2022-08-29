@@ -14,8 +14,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.litongjava.utils.digest.SHA1Utils;
-import com.litongjava.utils.http.FileUploadUtil;
-import com.litongjava.utils.http.litonghttpclient.HttpClientUtils;
+import com.litongjava.utils.httpclient.HttpClientUtils;
+import com.litongjava.utils.httpclient.HttpUploadUtils;
 import com.litongjava.utils.io.IOUtils;
 import com.litongjava.utils.url.UrlUtils;
 
@@ -114,7 +114,7 @@ public class KodUtils {
     // 完整的请求地址
     String url = append.toString() + queryParams.toString();
 
-    StringBuilder stringBuilder = FileUploadUtil.uploadFile(url, fis, "file", filePath);
+    StringBuilder stringBuilder = HttpUploadUtils.uploadFile(url, fis, "file", filePath);
     return stringBuilder.toString();
   }
 
