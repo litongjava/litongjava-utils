@@ -1,18 +1,20 @@
 package com.litong.utils.file;
 
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.junit.Test;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONWriter;
+import com.litongjava.utils.io.IOUtils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author Administrator
+ * @author litongjava@qq.com
  * @date 2019年1月11日_下午4:42:48 
  * @version 1.0 
  */
@@ -21,20 +23,16 @@ public class JSONFileUtilTest {
   @Test
   public void test() {
     User user = new User("litong", "123456");
-    FileWriter fileWriter = null;
+    FileOutputStream out = null;
     try {
-      fileWriter = new FileWriter("user.json");
-      JSON.writeJSONString(fileWriter, user);
+      //fileWriter = new FileWriter("user.json");
+      //JSON.writeJSONString(fileWriter, user);
+      out = new FileOutputStream("user.json");
+      JSON.writeTo(out, user, JSONWriter.Feature.PrettyFormat);
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (fileWriter != null) {
-        try {
-          fileWriter.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-      }
+      IOUtils.closeQuietly(out);
     }
   }
 

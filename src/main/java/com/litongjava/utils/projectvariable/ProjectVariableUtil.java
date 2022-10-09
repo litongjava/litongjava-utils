@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.litongjava.utils.json.fastjson.FastJsonSerialiable;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -38,7 +40,7 @@ public class ProjectVariableUtil {
     boolean exists = configFile.exists();
     try {
       if (exists) {
-        parameters = JsonSerilizable.deserilizableForMapFromFile(configFileName, String.class, ProjectVariable.class);
+        parameters = FastJsonSerialiable.deserilizableForMapFromFile(configFileName, String.class, ProjectVariable.class);
       }
     } catch (IOException e) {
       log.info("读取json配置文件失败");
@@ -136,7 +138,7 @@ public class ProjectVariableUtil {
    */
   public static void store() {
     try {
-      JsonSerilizable.serilizableForMap(parameters, configFileName);
+      FastJsonSerialiable.serilizableForMap(parameters, configFileName);
     } catch (IOException e) {
       log.info("保存json配置文件失败");
       e.printStackTrace();

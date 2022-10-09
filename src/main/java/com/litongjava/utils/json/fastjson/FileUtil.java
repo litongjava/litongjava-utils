@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-import com.alibaba.fastjson.util.IOUtils;
+import com.litongjava.utils.io.IOUtils;
 
 public class FileUtil {
 

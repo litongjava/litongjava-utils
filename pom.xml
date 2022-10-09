@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.7</version>
+  <version>1.0.8</version>
   <name>litongjava-utils</name>
   <description>java开发常用工具类封装</description>
   <url>https://github.com/litongjava/litongjava-utils</url>
@@ -145,9 +145,9 @@
 
     <!-- fastjson -->
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.78</version>
+      <groupId>com.alibaba.fastjson2</groupId>
+      <artifactId>fastjson2</artifactId>
+      <version>2.0.12</version>
     </dependency>
     <!-- xtream -->
     <dependency>
@@ -202,6 +202,13 @@
       <groupId>com.alibaba</groupId>
       <artifactId>easyexcel</artifactId>
       <version>2.2.7</version>
+    </dependency>
+
+    <!-- okhttp -->
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+      <version>3.11.0</version>
     </dependency>
 
   </dependencies>

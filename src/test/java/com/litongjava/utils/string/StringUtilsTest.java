@@ -1,10 +1,8 @@
 package com.litongjava.utils.string;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
-
-import com.alibaba.fastjson.JSON;
 
 /**
  * @author Ping E Lee

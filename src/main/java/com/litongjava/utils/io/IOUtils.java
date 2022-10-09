@@ -3,6 +3,7 @@ package com.litongjava.utils.io;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 
 import javax.mail.MessagingException;
 import javax.mail.Transport;
@@ -59,5 +60,8 @@ public class IOUtils {
         e.printStackTrace();
       }
     }
+  }
+
+  public static void close(PrintWriter pw) {
   }
 }
