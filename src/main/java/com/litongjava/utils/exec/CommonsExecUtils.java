@@ -8,7 +8,7 @@ import org.apache.commons.exec.ExecuteWatchdog;
 import org.apache.commons.exec.PumpStreamHandler;
 
 import com.litongjava.utils.sytstem.OSType;
-import com.litongjava.utils.sytstem.RuntimeUtils;
+import com.litongjava.utils.sytstem.OsTypeUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,13 +20,13 @@ import lombok.extern.slf4j.Slf4j;
  */
 
 @Slf4j
-public class CmdUtils {
+public class CommonsExecUtils {
   /**
    * 带返回结果的命令执行
    * 
    * @return
    */
-  public static String execCmd(String command) {
+  public static String exec(String command) {
     // 接收正常结果流
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     // 接收异常结果流
@@ -48,7 +48,7 @@ public class CmdUtils {
       // 不同操作系统注意编码，否则结果乱码
       // String out = outputStream.toString("GBK");
       // String error = errorStream.toString("GBK");
-      String osType = RuntimeUtils.getOsType();
+      String osType = OsTypeUtils.getOsType();
       String out = null;
       String error = null;
       if (osType.contains(OSType.WINDOWS10) || osType.contains(OSType.WINDOWS)) {
@@ -67,9 +67,4 @@ public class CmdUtils {
     }
   }
 
-  public static void main(String[] args) {
-    String command = "ping 192.168.0.10";
-    String result = CmdUtils.execCmd(command);
-    System.out.println(result);
-  }
 }

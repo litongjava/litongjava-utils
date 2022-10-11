@@ -17,7 +17,7 @@ public class FrpUtils implements Runnable {
     File frpcIni = new File("lib/frp/frpc.ini");
     String command = frpcExe.getAbsolutePath() + " -c " + frpcIni.getAbsolutePath();
     log.info("启动frp:{}", command);
-    String result = CmdUtils.execCmd(command);
+    String result = CommonsExecUtils.exec(command);
     log.info("启动frp结果:{}", result);
   }
 
