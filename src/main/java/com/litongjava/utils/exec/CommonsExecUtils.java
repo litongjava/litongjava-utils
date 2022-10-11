@@ -49,14 +49,13 @@ public class CommonsExecUtils {
       // String out = outputStream.toString("GBK");
       // String error = errorStream.toString("GBK");
       String osType = OsTypeUtils.getOsType();
+      log.info(osType);
       String out = null;
       String error = null;
       if (osType.contains(OSType.WINDOWS10) || osType.contains(OSType.WINDOWS)) {
-        log.info(osType);
         out = outputStream.toString("GBK");
         error = errorStream.toString("GBK");
       } else {
-        log.info(osType);
         out = outputStream.toString();
         error = errorStream.toString();
       }
