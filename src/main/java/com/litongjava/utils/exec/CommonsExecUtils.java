@@ -26,8 +26,8 @@ public class CommonsExecUtils {
    * 
    * @return
    */
-  public static String exec(String command) {
-    // 接收正常结果流
+  public static String exec(String command,long timeout) {
+ // 接收正常结果流
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     // 接收异常结果流
     ByteArrayOutputStream errorStream = new ByteArrayOutputStream();
@@ -37,8 +37,8 @@ public class CommonsExecUtils {
       // 获取命令执行器
       DefaultExecutor exec = new DefaultExecutor();
       exec.setExitValues(null);
-      // 设置一分钟超时
-      ExecuteWatchdog watchdog = new ExecuteWatchdog(60 * 1000);
+
+      ExecuteWatchdog watchdog = new ExecuteWatchdog(timeout);
       exec.setWatchdog(watchdog);
       // 数据泵流处理器
       PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream, errorStream);
@@ -64,6 +64,11 @@ public class CommonsExecUtils {
       e.printStackTrace();
       return e.getMessage();
     }
+    
+  }
+  public static String exec(String command) {
+    // 设置一小时超时
+    return exec(command,60 * 60 * 1000);
   }
 
 }
