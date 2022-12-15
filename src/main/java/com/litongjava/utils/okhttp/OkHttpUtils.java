@@ -61,6 +61,7 @@ public class OkHttpUtils {
       }
     } catch (Exception e) {
       logger.error("okhttp3 put error >> ex = {}", ExceptionUtils.getStackTrace(e));
+      return null;
     } finally {
       if (response != null) {
         response.close();

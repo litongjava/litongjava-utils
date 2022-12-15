@@ -20,7 +20,7 @@ import org.icepdf.core.util.GraphicsRenderingHints;
  */
 public class IcePdfUtils {
 
-  public static List<File> toImages(String pdfPath, float scale) {
+  public static List<File> toImages(String pdfPath, float scale, boolean isOverride) {
     Document document = new Document();
     try {
       document.setFile(pdfPath);
@@ -34,22 +34,26 @@ public class IcePdfUtils {
     float rotation = 0f;// 旋转角度
 
     for (int i = 0; i < document.getNumberOfPages(); i++) {
-      // getPageImage
-      BufferedImage image = (BufferedImage) document.getPageImage(i, GraphicsRenderingHints.SCREEN,
-          //
-          org.icepdf.core.pobjects.Page.BOUNDARY_CROPBOX, rotation, scale);
-
-      RenderedImage rendImage = image;
-
-      String num = i < 9 ? "0" + (1+1) : (i+1) + "";
+      String num = i < 9 ? "0" + (1 + 1) : (i + 1) + "";
       File file = new File(pdfPath + "_" + num + ".png");
-      try {
-        ImageIO.write(rendImage, "png", file);
-        retval.add(file);
-      } catch (IOException e) {
-        e.printStackTrace();
+      retval.add(file);
+      if (file.exists()) {
+        if (isOverride) {
+          // getPageImage
+          BufferedImage image = (BufferedImage) document.getPageImage(i, GraphicsRenderingHints.SCREEN,
+              //
+              org.icepdf.core.pobjects.Page.BOUNDARY_CROPBOX, rotation, scale);
+
+          RenderedImage rendImage = image;
+          try {
+            ImageIO.write(rendImage, "png", file);
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          image.flush();
+        }
       }
-      image.flush();
+
     }
     document.dispose();
     return retval;
