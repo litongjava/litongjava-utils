@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.9</version>
+  <version>1.1.0</version>
   <name>litongjava-utils</name>
   <description>java开发常用工具类封装</description>
   <url>https://github.com/litongjava/litongjava-utils</url>
@@ -142,23 +142,17 @@
       <version>2.5.3</version>
     </dependency>
 
-    <!-- fastjson -->
     <dependency>
-      <groupId>com.alibaba.fastjson2</groupId>
-      <artifactId>fastjson2</artifactId>
-      <version>2.0.12</version>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>2.0.25</version>
     </dependency>
+
     <!-- xtream -->
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
       <artifactId>xstream</artifactId>
       <version>1.4.10</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.clojars.cbilson</groupId>
-      <artifactId>pinyin4j</artifactId>
-      <version>2.5.0</version>
     </dependency>
 
     <dependency>
