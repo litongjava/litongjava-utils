@@ -6,13 +6,6 @@ java开发常用工具类和实体类封装
 [https://github.com/litongjava/litongjava-utils](https://github.com/litongjava/litongjava-utils)  
 [https://gitee.com/ppnt/litongjava-utils](https://gitee.com/ppnt/litongjava-utils)
 
-## 依赖文件
-依赖文件如下
-![](readme_files/1.jpg)
-
-依赖文件如下  
-![](readme_files/1.png)
-
 ## 使用步骤
 
 ### 添加依赖
@@ -20,7 +13,7 @@ java开发常用工具类和实体类封装
 <dependency>
   <groupId>com.litongjava</groupId>
   <artifactId>litongjava-utils</artifactId>
-  <version>1.0.9</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 默认使用的日志是sfl4j+logback,如果日志框架冲突可以使用下面的配置排除logback
@@ -96,7 +89,7 @@ List<Map<String, Object>> listMap = PoiExcelUtils.readExcel(filepath, 0);
 excel文件  
 |id																|appid		|apisecret												|apikey														|
 |12d28291e4314d48bcdd8a7566ba5337	|qwdfrugi	|d8117b01d8e64fe5afffffffffffffff	|3718fffffffffffffffffffffffffff	|
-  
+
 读取代码
 ```
 package top.ppnt.arcsoft.face;
